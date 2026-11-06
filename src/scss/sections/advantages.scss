@@ -1,0 +1,215 @@
+@use "../functions" as *;
+
+.advantages {
+  position: relative;
+  margin-top: s(-100);
+  background-color: var(--color-bg);
+  border-radius: s(40) s(40) 0 0;
+
+  @include mobile {
+    margin-top: s(-84);
+    border-radius: s(18) s(18) 0 0;
+  }
+
+  &__container {
+    position: relative;
+    padding-block: s(120);
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: s(60);
+      padding-block: 0;
+    }
+
+    @include mobile {
+      gap: s(120);
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: s(900);
+    height: s(900);
+    color: var(--color-accent-light);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+    @include tablet {
+      top: s(-80);
+    }
+
+    @include mobile {
+      top: s(-320);
+      left: s(-220);
+      right: s(-220);
+      width: s(700);
+      height: s(700);
+      transform: none;
+    }
+
+    .circles__ring {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: advantages-radar 6s linear infinite;
+      animation-delay: calc(var(--i) * -1s);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .circles__ring {
+        opacity: calc(1 - var(--i) * 0.16);
+        transform: scale(calc(0.49 + var(--i) * 0.102));
+        animation: none;
+      }
+    }
+  }
+
+  &__head {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: s(400);
+    text-align: center;
+    transform: translate(-50%, -50%);
+
+    @include tablet {
+      position: relative;
+      top: auto;
+      left: auto;
+      align-self: center;
+      transform: none;
+    }
+
+    @include mobile {
+      align-self: stretch;
+      align-items: flex-start;
+      width: auto;
+      text-align: left;
+    }
+  }
+
+  &__btn {
+    margin-top: s(32);
+
+    @include mobile {
+      margin-top: s(24);
+    }
+  }
+
+  &__slider {
+    @include mobile {
+      overflow: visible;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: s(440) 1fr s(440);
+    gap: s(40) 0;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: s(24);
+    }
+
+    @include mobile {
+      display: flex;
+      gap: 0;
+    }
+  }
+
+  &__item {
+    height: auto;
+
+    &:nth-child(odd) {
+      grid-column: 1;
+    }
+
+    &:nth-child(even) {
+      grid-column: 3;
+    }
+
+    @include tablet {
+      &:nth-child(n) {
+        grid-column: auto;
+      }
+    }
+
+    @include mobile {
+      width: s(316);
+    }
+  }
+}
+
+@keyframes advantages-radar {
+  0% {
+    opacity: 0;
+    transform: scale(0.45);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.advantage-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: s(253);
+  padding: s(20);
+  background-color: var(--color-white);
+  border-radius: s(18);
+
+  @include mobile {
+    min-height: s(262);
+    padding: s(16);
+  }
+
+  &__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: s(50);
+    height: s(50);
+    color: var(--color-white);
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    font: 400 s(18)/1 var(--font-main);
+    transition: color 0.3s, background-color 0.3s, scale 0.3s;
+  }
+
+  @media (hover: hover) {
+    &:hover &__num {
+      color: var(--color-black);
+      background-color: var(--color-gold);
+      scale: 1.1;
+    }
+  }
+
+  &__title {
+    margin-top: s(20);
+
+    @include mobile {
+      font-size: s(18);
+    }
+  }
+
+  &__text {
+    margin-top: auto;
+    padding-top: s(20);
+    color: var(--color-text-lg);
+    line-height: 1.3;
+  }
+}

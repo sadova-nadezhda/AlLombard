@@ -1,0 +1,22 @@
+<section class="pledge section-pad-bottom" id="pledge" aria-labelledby="pledge-title">
+  <div class="pledge__container container">
+    <p class="label pledge__label" data-anim="fade-up">что принимаем</p>
+    <h2 class="pledge__title" id="pledge-title" data-anim="fade-up" data-anim-delay="0.1">Виды залога</h2>
+    <button class="pledge__btn button s button-outline-accent button-sm modal-btn" type="button" data-type="feedback" data-anim="fade-up" data-anim-delay="0.2">Оставить заявку</button>
+
+    <ul class="pledge__list" data-anim-stagger>
+      @@include('pledge-card.html', { "mod": "gold", "title": "Изделия из&nbsp;золота", "text": "Кольца, серьги, цепи, браслеты, часы и&nbsp;украшения", "img": "img/pledge-gold.png", "imgMobile": "img/pledge-gold-mb.png", "alt": "Золотое кольцо с&nbsp;бриллиантом" })
+      @@include('pledge-card.html', { "mod": "console", "title": "Игровые приставки", "text": "PlayStation, Xbox, Nintendo, Steam Deck и&nbsp;аксессуары", "img": "img/pledge-console.png", "alt": "Игровая приставка с&nbsp;геймпадом" })
+      @@include('pledge-card.html', { "mod": "appliance", "title": "Бытовая техника", "text": "Телевизоры, кондиционеры, техника для кухни и&nbsp;дома", "img": "img/pledge-appliance.png", "alt": "Холодильник" })
+      @@include('pledge-card.html', { "mod": "phone", "title": "Смартфоны и&nbsp;гаджеты", "text": "Телефоны, смарт-часы, фото и&nbsp;видео техника", "img": "img/pledge-phone.png", "imgMobile": "img/pledge-phone-mb.png", "alt": "Смартфон и&nbsp;смарт-часы" })
+      @@include('pledge-card.html', { "mod": "scooter", "title": "Электросамокаты<br> и&nbsp;велосипеды", "text": "Самокаты, велосипеды, мопеды и&nbsp;другой транспорт", "img": "img/pledge-scooter.png", "imgMobile": "img/pledge-scooter-mb.png", "alt": "Электросамокат и&nbsp;мопед" })
+      @@include('pledge-card.html', { "mod": "computer", "title": "Компьютеры<br> и&nbsp;оргтехника", "text": "Ноутбуки, мониторы, моноблоки, принтеры и&nbsp;комплектующие", "img": "img/pledge-computer.png", "imgMobile": "img/pledge-computer-mb.png", "alt": "Моноблок и&nbsp;принтер" })
+      @@include('pledge-card.html', { "mod": "fur", "title": "Меховые изделия", "text": "Шубы из&nbsp;соболя, шиншиллы и&nbsp;норки", "img": "img/pledge-fur.png", "alt": "Меховая шуба" })
+    </ul>
+
+    <div class="pledge__note" data-anim="fade-up">
+      @@include('svg/info.svg', { "class": "pledge__note-icon" })
+      <span>Возможность приёма и&nbsp;сумма займа зависят от&nbsp;состояния имущества. Уточните приём вашей вещи в&nbsp;выбранном отделении.</span>
+    </div>
+  </div>
+</section>

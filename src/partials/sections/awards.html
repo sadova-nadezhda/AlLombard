@@ -1,0 +1,17 @@
+<section class="awards section-pad-bottom section-hidden" aria-labelledby="awards-title">
+  <div class="awards__container container">
+    <div class="awards__head" data-anim-stagger>
+      <h2 class="awards__title" id="awards-title">награды</h2>
+      @@include('slider-nav.html', { "class": "awards__nav" })
+    </div>
+
+    <!-- Высота карточек одна, ширина — по пропорциям грамоты. Стрелки скрываются, если все награды помещаются -->
+    <div class="awards__slider swiper" data-slider="awards" data-anim-stagger=".award-card">
+      <ul class="awards__list swiper-wrapper">
+        @@include('award-card.html', { "img": "img/award-1.png", "alt": "Алғыс хат от Управления полиции Аль-Фарабийского района г. Шымкента", "width": "285", "height": "404" })
+        @@include('award-card.html', { "img": "img/award-2.png", "alt": "Благодарственное письмо от Юго-Восточного отдела полиции г. Караганды", "width": "285", "height": "404" })
+        @@include('award-card.html', { "img": "img/award-3.png", "alt": "Алғыс хат от Управления полиции Абайского района г. Шымкента", "width": "670", "height": "444" })
+      </ul>
+    </div>
+  </div>
+</section>

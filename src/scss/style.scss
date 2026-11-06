@@ -1,0 +1,32 @@
+// Точка входа → dist/css/style.css
+@use "fonts";
+@use "lenis";
+@use "vendor/swiper-bundle.min";
+@use "vendor/leaflet";
+@use "global";
+
+// Компоненты (до шапки и секций, чтобы их модификаторы перекрывали базу)
+@use "components/buttons";
+@use "components/field";
+@use "components/label";
+
+@use "header";
+@use "footer";
+@use "modals";
+
+// Глобальные секции
+@use "sections/feedback";
+
+// Остальные секции подключать сюда:
+@use "sections/hero";
+@use "sections/advantages";
+@use "sections/pledge";
+@use "sections/estimate";
+@use "sections/gold-loan";
+@use "sections/calculator";
+@use "sections/steps";
+@use "sections/partners";
+@use "sections/contacts-map";
+@use "sections/reviews";
+@use "sections/about";
+@use "sections/awards";

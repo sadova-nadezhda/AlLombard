@@ -1,0 +1,23 @@
+<section class="reviews section-pad-bottom section-hidden" aria-labelledby="reviews-title">
+  <div class="reviews__container container">
+    <div class="reviews__head" data-anim-stagger>
+      <p class="label reviews__label">отзывы</p>
+      <h2 class="reviews__title" id="reviews-title">Клиенты о&nbsp;нас</h2>
+      @@include('slider-nav.html', { "class": "reviews__nav" })
+    </div>
+
+    <!-- Стрелки скрываются, если все отзывы помещаются; на мобильном — свайп -->
+    <div class="reviews__slider swiper" data-slider="reviews" data-anim-stagger=".review-card">
+      <ul class="reviews__list swiper-wrapper">
+        <!-- TODO: временные одинаковые отзывы из макета — заменить реальными -->
+        @@include('review-card.html', { "name": "Азат Рахимгалиев", "text": "Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!", "date": "29 июля 2026", "datetime": "2026-07-29", "link": "#" })
+        @@include('review-card.html', { "name": "Азат Рахимгалиев", "text": "Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!", "date": "29 июля 2026", "datetime": "2026-07-29", "link": "#" })
+        @@include('review-card.html', { "name": "Азат Рахимгалиев", "text": "Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!", "date": "29 июля 2026", "datetime": "2026-07-29", "link": "#" })
+        @@include('review-card.html', { "name": "Азат Рахимгалиев", "text": "Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!", "date": "29 июля 2026", "datetime": "2026-07-29", "link": "#" })
+        @@include('review-card.html', { "name": "Азат Рахимгалиев", "text": "Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!", "date": "29 июля 2026", "datetime": "2026-07-29", "link": "#" })
+        @@include('review-card.html', { "name": "Азат Рахимгалиев", "text": "Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!", "date": "29 июля 2026", "datetime": "2026-07-29", "link": "#" })
+        <!-- /TODO -->
+      </ul>
+    </div>
+  </div>
+</section>

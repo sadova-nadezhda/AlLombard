@@ -1,0 +1,34 @@
+<section class="partners section-pad-bottom section-hidden" aria-labelledby="partners-title">
+  <div class="partners__container container">
+    <div class="partners__head" data-anim-stagger>
+      <h2 class="partners__title" id="partners-title">наши партнеры</h2>
+      @@include('slider-nav.html', { "class": "partners__nav" })
+    </div>
+
+    <!-- Два ряда (Swiper Grid), заполнение по колонкам: карточки идут парами «верх — низ».
+         Стрелки скрываются, если все логотипы помещаются -->
+    <div class="partners__slider swiper" data-slider="partners" data-anim-stagger=".partner-card">
+      <ul class="partners__list swiper-wrapper">
+        @@include('partner-card.html', { "logo": "img/partner-1.png", "name": "Alisystems" })
+        @@include('partner-card.html', { "logo": "img/partner-5.png", "name": "Тау-Кен Алтын" })
+        @@include('partner-card.html', { "logo": "img/partner-2.png", "name": "1С" })
+        @@include('partner-card.html', { "logo": "img/partner-6.png", "name": "QazaqOil" })
+        @@include('partner-card.html', { "logo": "img/partner-3.png", "name": "Яндекс Go для бизнеса" })
+        @@include('partner-card.html', { "logo": "img/partner-7.png", "name": "Kcell" })
+        @@include('partner-card.html', { "logo": "img/partner-4.png", "name": "QazPost" })
+        @@include('partner-card.html', { "logo": "img/partner-8.png", "name": "Beeline" })
+        <!-- TODO: временные дубли для проверки стрелок — удалить -->
+        @@include('partner-card.html', { "logo": "img/partner-1.png", "name": "Alisystems" })
+        @@include('partner-card.html', { "logo": "img/partner-5.png", "name": "Тау-Кен Алтын" })
+        @@include('partner-card.html', { "logo": "img/partner-2.png", "name": "1С" })
+        @@include('partner-card.html', { "logo": "img/partner-6.png", "name": "QazaqOil" })
+        @@include('partner-card.html', { "logo": "img/partner-3.png", "name": "Яндекс Go для бизнеса" })
+        @@include('partner-card.html', { "logo": "img/partner-7.png", "name": "Kcell" })
+        @@include('partner-card.html', { "logo": "img/partner-4.png", "name": "QazPost" })
+        @@include('partner-card.html', { "logo": "img/partner-8.png", "name": "Beeline" })
+        <!-- /TODO -->
+
+      </ul>
+    </div>
+  </div>
+</section>

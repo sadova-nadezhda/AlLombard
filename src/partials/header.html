@@ -1,0 +1,58 @@
+<!-- theme: "accent" — синяя шапка (главная), "light" — светлая -->
+<header class="header @@if (theme === 'light') {header--light}">
+  <div class="header__container container">
+    <div class="header__inner">
+      <a class="header__logo" href="index.html" aria-label="AL LOMBARD — на главную">
+        @@include('svg/logo.svg', { "class": "header__logo-img" })
+      </a>
+
+      <div class="header__badge">
+        <span class="header__badge-img" aria-hidden="true"></span>
+        <span class="visually-hidden">Официально состоим в реестре МФО РК</span>
+      </div>
+
+      <div class="header__panel" id="header-panel">
+        <nav class="header__nav" aria-label="Основное меню">
+          <ul class="header__menu">
+            <li class="header__menu-item">
+              <a class="header__menu-link" href="#">Что принимаем</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__menu-link" href="#">Онлайн калькулятор</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__menu-link" href="#">Контакты</a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__menu-link @@if (page === 'about') {is-active}" href="about.html">О компании</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__actions">
+          <div class="header__lang" data-dropdown>
+            <button class="header__lang-toggle button @@if (theme === 'light') {button-outline-accent}@@if (theme !== 'light') {button-outline-white} button-circle" type="button" aria-label="Язык сайта: русский. Выбрать язык" aria-expanded="false" aria-controls="header-lang-list" data-dropdown-toggle>RU</button>
+            <ul class="header__lang-list" id="header-lang-list">
+              <li class="header__lang-item is-current">
+                <a class="header__lang-link button @@if (theme === 'light') {button-outline-accent}@@if (theme !== 'light') {button-outline-white} button-circle" href="#" hreflang="ru" lang="ru" aria-label="Русский" aria-current="true">RU</a>
+              </li>
+              <li class="header__lang-item">
+                <a class="header__lang-link button @@if (theme === 'light') {button-outline-accent}@@if (theme !== 'light') {button-outline-white} button-circle" href="#" hreflang="kk" lang="kk" aria-label="Қазақша">KZ</a>
+              </li>
+              <li class="header__lang-item">
+                <a class="header__lang-link button @@if (theme === 'light') {button-outline-accent}@@if (theme !== 'light') {button-outline-white} button-circle" href="#" hreflang="en" lang="en" aria-label="English">EN</a>
+              </li>
+            </ul>
+          </div>
+          <button class="header__btn button @@if (theme === 'light') {button-outline-accent}@@if (theme !== 'light') {button-outline-white} modal-btn" type="button" data-type="feedback">Оставить заявку</button>
+        </div>
+      </div>
+
+      <button class="header__burger button @@if (theme === 'light') {button-outline-accent}@@if (theme !== 'light') {button-outline-white} button-circle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-panel">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,20 @@
+<section class="advantages section-pad section-hidden" aria-labelledby="advantages-title">
+  <div class="advantages__container container">
+    @@include('svg/circles.svg', { "class": "advantages__decor" })
+
+    <div class="advantages__head" data-anim-stagger>
+      <h2 class="advantages__title" id="advantages-title">Почему выбирают<br> AL&nbsp;LOMBARD?</h2>
+      <button class="advantages__btn button button-outline-accent button-sm modal-btn" type="button" data-type="feedback">Оставить заявку</button>
+    </div>
+
+    <!-- Слайдер только на мобильном, на остальных экранах — сетка -->
+    <div class="advantages__slider swiper" data-mobile-slider data-slider-gap="8" data-anim-stagger=".advantage-card">
+      <ul class="advantages__list swiper-wrapper">
+        @@include('advantage-card.html', { "num": "01", "title": "Оценка с&nbsp;учётом рынка", "text": "Обеспечиваем объективную и&nbsp;справедливую оценку залогового имущества" })
+        @@include('advantage-card.html', { "num": "02", "title": "Предварительная оценка по&nbsp;фото", "text": "Отправьте фотографии и&nbsp;описание в&nbsp;WhatsApp. Сообщим ориентировочную сумму до&nbsp;посещения отделения" })
+        @@include('advantage-card.html', { "num": "03", "title": "Юридически оформленный договор", "text": "Честные условия, понятное оформление и&nbsp;полный пакет документов" })
+        @@include('advantage-card.html', { "num": "04", "title": "Безопасное хранение", "text": "Хранение залога осуществляется в&nbsp;отделениях ломбарда с&nbsp;обеспечением контроля и&nbsp;сохранности" })
+      </ul>
+    </div>
+  </div>
+</section>

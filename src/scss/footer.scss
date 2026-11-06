@@ -1,0 +1,169 @@
+@use "functions" as *;
+
+.footer {
+  padding-block: s(36) s(40);
+  color: var(--color-white);
+  background: var(--color-accent-hover);
+  font-family: var(--font-main);
+
+  @include mobile {
+    padding-block: s(32);
+  }
+
+  // Верх: заголовок, меню, контакты
+  &__top {
+    display: grid;
+    grid-template-columns: s(575) s(424) 1fr;
+    align-items: start;
+
+    @include tablet {
+      grid-template-columns: s(460) 1fr;
+      row-gap: s(40);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      row-gap: s(32);
+    }
+  }
+
+  &__title {
+    max-width: s(520);
+
+    @include tablet {
+      grid-column: 1 / -1;
+      max-width: none;
+    }
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: s(230) auto;
+    align-items: start;
+
+    @include mobile {
+      grid-template-columns: s(180) auto;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: s(13);
+
+    @include mobile {
+      gap: s(16);
+    }
+  }
+
+  &__contacts {
+    @include mobile {
+      margin-top: s(-4);
+    }
+  }
+
+  &__link {
+    font-size: s(16);
+    line-height: 1.2;
+    transition: color 0.3s;
+
+    @include mobile {
+      font-size: s(17);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-white-50);
+      }
+    }
+  }
+
+  // Логотип-водяной знак во всю ширину контейнера
+  &__logo {
+    display: block;
+    margin-top: s(4);
+    color: var(--color-white);
+    opacity: 0.1;
+
+    @include tablet {
+      margin-top: s(48);
+    }
+
+    @include mobile {
+      width: s(336);
+      margin-top: s(28);
+      color: var(--color-white-80);
+      opacity: 1;
+    }
+  }
+
+  &__logo-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 210 / 38;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: s(20);
+    margin-top: s(40);
+    color: var(--color-white-80);
+    font-size: s(16);
+    line-height: 1.2;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      justify-content: start;
+      column-gap: s(60);
+      row-gap: s(16);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      margin-top: s(28);
+      font-size: s(15);
+      line-height: 1;
+    }
+  }
+
+  &__bottom-link {
+    transition: color 0.3s;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  &__dev {
+    color: var(--color-white);
+    font-weight: 700;
+  }
+
+  &__legal {
+    margin-top: s(40);
+    color: var(--color-white-50);
+    font-size: s(12);
+    line-height: 1.1;
+
+    @include mobile {
+      margin-top: s(32);
+      font-size: s(11);
+      line-height: 1.13;
+    }
+  }
+
+  &__link,
+  &__bottom-link,
+  &__logo {
+    &:focus-visible {
+      outline: 1px solid currentColor;
+      outline-offset: s(4);
+    }
+  }
+}

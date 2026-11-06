@@ -1,0 +1,18 @@
+<section class="steps section-pad-bottom section-hidden" aria-labelledby="steps-title">
+  <div class="steps__container container">
+    <div class="steps__head" data-anim-stagger>
+      <p class="label steps__label">как мы работаем</p>
+      <h2 class="steps__title" id="steps-title">Оформите быстро и&nbsp;просто</h2>
+    </div>
+
+    <!-- Слайдер только на мобильном, на остальных экранах — сетка -->
+    <div class="steps__slider swiper" data-mobile-slider data-slider-gap="8" data-anim-stagger=".step-card">
+      <ol class="steps__list swiper-wrapper">
+        @@include('step-card.html', { "title": "Онлайн-оценка по&nbsp;фото", "text": "Отправьте фото имущества и&nbsp;получите ориентировочную сумму", "img": "img/steps-1.png", "width": "218", "height": "206" })
+        @@include('step-card.html', { "title": "Профессиональная оценка", "text": "Специалист осмотрит вещь и&nbsp;сообщит окончательную сумму займа", "img": "img/steps-2.png", "width": "211", "height": "188" })
+        @@include('step-card.html', { "title": "Ознакомьтесь<br> с&nbsp;условиями", "text": "Узнайте сумму к&nbsp;возврату и&nbsp;дату погашения. Если условия подходят&nbsp;— подпишите договор.", "img": "img/steps-3.png", "width": "162", "height": "164" })
+        @@include('step-card.html', { "title": "Получите деньги", "text": "Получите согласованную сумму способом, доступным в&nbsp;отделении.", "img": "img/steps-4.png", "width": "181", "height": "205" })
+      </ol>
+    </div>
+  </div>
+</section>

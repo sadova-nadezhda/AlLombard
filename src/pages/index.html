@@ -1,0 +1,21 @@
+@@include('head.html', { "title": "Главная", "description": "Описание главной" })
+@@include('header.html', { "page": "index", "theme": "accent" })
+
+<main class="main">
+  @@include('sections/hero.html')
+  @@include('sections/advantages.html')
+  @@include('sections/pledge.html')
+  @@include('sections/estimate.html', { "id": "estimate", "theme": "accent" })
+  @@include('sections/gold-loan.html')
+  @@include('sections/calculator.html')
+  @@include('sections/steps.html')
+  @@include('sections/partners.html')
+  @@include('sections/contacts-map.html')
+  @@include('sections/estimate.html', { "id": "estimate-light", "theme": "light" })
+  @@include('sections/reviews.html')
+  @@include('sections/about.html')
+  @@include('sections/awards.html')
+</main>
+
+@@include('footer.html')
+@@include('scripts.html')

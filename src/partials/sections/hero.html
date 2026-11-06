@@ -1,0 +1,28 @@
+<section class="hero section-hidden">
+  <div class="hero__container container">
+    @@include('svg/brand.svg', { "class": "hero__brand" })
+
+    <div class="hero__content">
+      <!-- Строки обёрнуты для анимации «выезд из-под маски» (animations.js) -->
+      <h1 class="hero__title">
+        <span class="hero__title-line"><span class="hero__title-line-inner" data-anim="intro">Деньги под залог</span></span>
+        <span class="hero__title-line"><span class="hero__title-line-inner" data-anim="intro">золота, техники</span></span>
+        <span class="hero__title-line"><span class="hero__title-line-inner" data-anim="intro">и&nbsp;меховых изделий</span></span>
+      </h1>
+      <p class="hero__text" data-anim="intro">Узнайте предварительную сумму займа по фото в WhatsApp. Окончательная оценка — после осмотра в&nbsp;отделении.</p>
+      <a class="hero__btn button button-white" href="#" target="_blank" rel="noopener" data-anim="intro">Оценить по фото</a>
+    </div>
+
+    <div class="hero__stat" data-anim="intro">
+      <img class="hero__stat-icon" src="img/hero-gif.gif" alt="" width="104" height="104">
+      <p class="hero__stat-body">
+        <span class="hero__stat-value" data-counter data-counter-delay="0.6">100+</span>
+        <span class="hero__stat-text">филиалов по <span class="hero__stat-long">Казахстану</span><span class="hero__stat-short">РК</span></span>
+      </p>
+    </div>
+
+    <div class="hero__visual">
+      <img class="hero__img" data-anim="intro" src="img/hero-img.png" alt="Золотое кольцо со львом в белой руке" width="746" height="497">
+    </div>
+  </div>
+</section>

@@ -1,0 +1,87 @@
+@use "../functions" as *;
+
+.awards {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: s(30);
+
+    @include tablet {
+      gap: s(20);
+    }
+
+    @include mobile {
+      gap: s(16);
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: s(20);
+    min-height: s(46);
+
+    @include mobile {
+      min-height: 0;
+    }
+  }
+
+  // Заголовок секции оформлен как лейбл
+  &__title {
+    font: 400 s(14)/1 var(--font-main);
+  }
+
+  &__nav {
+    // Swiper ставит .swiper-button-lock, когда все слайды помещаются
+    &:has(.swiper-button-lock) {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__slider {
+    // margin: auto у .swiper отключает растягивание во flex-колонке
+    width: 100%;
+
+    @include mobile {
+      overflow: visible;
+    }
+  }
+
+  // Ширина слайда — по картинке (slidesPerView: "auto")
+  &__item {
+    width: auto;
+  }
+}
+
+.award-card {
+  padding: s(12);
+  background-color: var(--color-white);
+  border-radius: s(18);
+
+  // Высота фиксирована, ширина считается из width/height картинки
+  &__img {
+    width: auto;
+    height: s(416);
+    border-radius: s(12);
+    transition: scale 0.5s ease;
+
+    @include tablet {
+      height: s(360);
+    }
+
+    @include mobile {
+      height: s(400);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover &__img {
+      scale: 1.03;
+    }
+  }
+}

@@ -1,0 +1,154 @@
+@use "../functions" as *;
+
+.gold-loan {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: s(20);
+
+    @include tablet {
+      grid-template-columns: 100%;
+    }
+
+    @include mobile {
+      gap: s(16);
+    }
+  }
+
+  &__card,
+  &__prices {
+    overflow: hidden;
+    background-color: var(--color-white);
+    border-radius: s(18);
+    border: 1px solid #ECECEC;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    min-height: s(356);
+    padding: s(20);
+
+    @include mobile {
+      flex-direction: column;
+      min-height: 0;
+      padding: s(16) s(16) 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: s(480);
+
+    @include mobile {
+      align-items: stretch;
+      max-width: none;
+    }
+  }
+
+  &__text {
+    max-width: s(420);
+    margin-top: s(14);
+    line-height: 1.3;
+
+    @include mobile {
+      margin-top: s(8);
+    }
+  }
+
+  &__terms {
+    display: flex;
+    gap: s(20);
+    margin-top: s(40);
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: s(14);
+    }
+  }
+
+  &__term-title {
+    font: 500 s(18)/1.2 var(--font-main);
+  }
+
+  &__term-value {
+    margin-top: s(4);
+  }
+
+  &__btn {
+    margin-top: auto;
+
+    @include mobile {
+      margin-top: s(24);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: s(264);
+    height: auto;
+
+    @include mobile {
+      position: static;
+      align-self: center;
+      width: s(230);
+      margin-top: s(16);
+    }
+  }
+
+  &__prices {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__table {
+    line-height: 1.3;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid var(--color-border);
+
+    &--head {
+      color: var(--color-white);
+      background-color: var(--color-table-head);
+      border-bottom: none;
+      font: 500 s(18)/1.2 var(--font-main);
+    }
+  }
+
+  &__cell {
+    padding: s(16) s(20);
+
+    @include mobile {
+      padding: s(16);
+    }
+
+    & + & {
+      border-left: 1px solid var(--color-border);
+    }
+  }
+
+  &__row--head &__cell + &__cell {
+    border-left: none;
+  }
+
+  &__note {
+    margin-top: auto;
+    padding: s(20);
+    color: var(--color-text-lg);
+    line-height: 1.3;
+
+    @include mobile {
+      padding: s(16);
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<li class="pledge__item pledge-card pledge-card--@@mod">
+  <div class="pledge-card__body">
+    <h3 class="pledge-card__title">@@title</h3>
+    <p class="pledge-card__text">@@text</p>
+  </div>
+  <picture>
+    @@if (context.imgMobile) {<source media="(max-width: 767px)" srcset="@@imgMobile">}
+    <img class="pledge-card__img" src="@@img" alt="@@alt" loading="lazy">
+  </picture>
+</li>

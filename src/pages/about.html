@@ -1,0 +1,15 @@
+@@include('head.html', { "title": "О компании", "description": "" })
+@@include('header.html', { "page": "about", "theme": "light" })
+
+<main class="main">
+  <section class="about">
+    <div class="about__container container">
+      <h1 class="about__title">О компании</h1>
+    </div>
+  </section>
+
+  @@include('sections/feedback.html', { "title": "Свяжитесь с нами" })
+</main>
+
+@@include('footer.html')
+@@include('scripts.html')

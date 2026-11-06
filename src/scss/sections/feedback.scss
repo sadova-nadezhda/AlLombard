@@ -1,0 +1,18 @@
+@use "../functions" as *;
+
+.feedback {
+  &__title {
+    font-size: s(40);
+    margin-bottom: s(32);
+
+    @include mobile {
+      font-size: s(28);
+    }
+  }
+
+  &__form {
+    display: grid;
+    gap: s(16);
+    max-width: s(480);
+  }
+}

@@ -1,0 +1,69 @@
+<section class="contacts-map section-pad-bottom" id="contacts-map" aria-labelledby="contacts-map-title" data-map-section>
+  <div class="contacts-map__container container">
+    <div class="contacts-map__head" data-anim-stagger>
+      <p class="label contacts-map__label">контакты</p>
+      <h2 class="contacts-map__title" id="contacts-map-title">Мы на&nbsp;карте</h2>
+    </div>
+
+    <div class="contacts-map__panel" data-anim="fade-up">
+      <div class="contacts-map__group">
+        <label class="contacts-map__group-title" for="contacts-map-city">Город</label>
+        <div class="contacts-map__select">
+          <select class="contacts-map__select-input field__input" id="contacts-map-city" data-map-city-select>
+            <option value="astana" selected>Астана</option>
+          </select>
+          @@include('svg/arrow.svg', { "class": "contacts-map__select-icon" })
+        </div>
+      </div>
+
+      <div class="contacts-map__group contacts-map__group--addresses">
+        <h3 class="contacts-map__group-title">Адрес</h3>
+        <!-- Список на каждый город: data-map-city совпадает с value в select.
+             data-coords — «долгота,широта». TODO: координаты примерные, заменить на точные.
+             link — ссылка на карточку в 2GIS; если пустая, собирается поиск по адресу на 2gis.kz -->
+        <ul class="contacts-map__list" data-map-city="astana" data-lenis-prevent>
+          @@include('map-address.html', { "title": "Абая 8", "coords": "71.4205,51.1655", "link": "" })
+          @@include('map-address.html', { "title": "Тауелсыздык 45/1", "coords": "71.4700,51.1300", "link": "" })
+          @@include('map-address.html', { "title": "Абылай хана 6", "coords": "71.4710,51.1590", "link": "" })
+          @@include('map-address.html', { "title": "Кабанбай батыра 2/6", "coords": "71.4310,51.1280", "link": "" })
+          @@include('map-address.html', { "title": "Бейбитшилик 47", "coords": "71.4150,51.1700", "link": "" })
+          @@include('map-address.html', { "title": "Сыганак 64/1", "coords": "71.4250,51.1060", "link": "" })
+          @@include('map-address.html', { "title": "Кенесары 65", "coords": "71.4370,51.1670", "link": "" })
+          @@include('map-address.html', { "title": "Чингиза Айтматова 40", "coords": "71.3980,51.0970", "link": "" })
+          @@include('map-address.html', { "title": "38-я д. 27/1", "coords": "71.4080,51.0870", "link": "" })
+          @@include('map-address.html', { "title": "Ш. Қосшығұлұлы д. 19", "coords": "71.3800,51.1420", "link": "" })
+          @@include('map-address.html', { "title": "Максут Нарикбаева 9 н.п 12", "coords": "71.4680,51.1200", "link": "" })
+          @@include('map-address.html', { "title": "Кабанбай Батыра 40", "coords": "71.4180,51.0900", "link": "" })
+        </ul>
+      </div>
+
+      <div class="contacts-map__contacts">
+        <div class="contacts-map__contacts-info">
+          <h3 class="contacts-map__group-title">Контакты</h3>
+          <a class="contacts-map__phone" href="tel:+77750070257">+7–775–007–02–57</a>
+        </div>
+        <ul class="contacts-map__socials">
+          <li>
+            <a class="contacts-map__social" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+              @@include('svg/instagram.svg', { "class": "contacts-map__social-icon" })
+            </a>
+          </li>
+          <li>
+            <a class="contacts-map__social" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+              @@include('svg/whatsapp.svg', { "class": "contacts-map__social-icon" })
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contacts-map__map" data-map data-anim="fade-up" data-anim-delay="0.1"></div>
+
+    <!-- Шаблон метки: JS клонирует его для каждого адреса -->
+    <template data-map-pin>
+      <button class="contacts-map__pin" type="button">
+        @@include('svg/pin.svg', { "class": "contacts-map__pin-icon" })
+      </button>
+    </template>
+  </div>
+</section>

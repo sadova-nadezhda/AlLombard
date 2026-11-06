@@ -1,0 +1,92 @@
+<section class="calculator section-pad-bottom" id="calculator" aria-labelledby="calculator-title" data-calculator data-rate="0.28">
+  <div class="calculator__container container">
+    <div class="calculator__head" data-anim-stagger>
+      <p class="label calculator__label">калькулятор</p>
+      <h2 class="calculator__title" id="calculator-title">Рассчитайте сумму к&nbsp;возврату</h2>
+    </div>
+
+    <div class="calculator__aside" data-anim="fade-up">
+      <div class="calculator__aside-content">
+        <h3 class="calculator__aside-title">Остались вопросы? Напишите нам</h3>
+        <a class="calculator__aside-btn button button-outline-accent button-sm" href="#" target="_blank" rel="noopener">Написать в&nbsp;WhatsApp</a>
+      </div>
+      <img class="calculator__aside-img" src="img/calculator.png" alt="" width="325" height="317" loading="lazy">
+    </div>
+
+    <div class="calculator__card" data-anim="fade-up" data-anim-delay="0.1">
+      <div class="calculator__card-head">
+        <h3 class="calculator__card-title">Выберите вид залога, укажите желаемую сумму и&nbsp;срок займа</h3>
+        <p class="calculator__rate-note">Расчёт выполняется по&nbsp;ставке 0,28% в&nbsp;день</p>
+      </div>
+
+      <div class="calculator__form">
+        <div class="calculator__field field">
+          <label class="calculator__field-label" for="calculator-type">Вид залога</label>
+          <div class="calculator__select">
+            <select class="calculator__select-input field__input" id="calculator-type" data-calculator-type>
+              <option value="" selected disabled>Выберите из&nbsp;списка</option>
+              <option value="gold" data-max-days="30">Изделия из&nbsp;золота</option>
+              <option value="console" data-max-days="15">Игровые приставки</option>
+              <option value="appliance" data-max-days="15">Бытовая техника</option>
+              <option value="phone" data-max-days="15">Смартфоны и&nbsp;гаджеты</option>
+              <option value="scooter" data-max-days="15">Электросамокаты и&nbsp;велосипеды</option>
+              <option value="computer" data-max-days="15">Компьютеры и&nbsp;оргтехника</option>
+              <option value="fur" data-max-days="15">Меховые изделия</option>
+            </select>
+            @@include('svg/arrow.svg', { "class": "calculator__select-icon" })
+          </div>
+        </div>
+
+        <div class="calculator__field field">
+          <label class="calculator__field-label" for="calculator-amount">Желаемая сумма</label>
+          <div class="calculator__amount">
+            <input class="calculator__amount-input field__input" id="calculator-amount" type="text" inputmode="numeric" autocomplete="off" placeholder="Введите сумму" maxlength="13" data-calculator-amount>
+            @@include('svg/tenge.svg', { "class": "calculator__amount-icon" })
+          </div>
+        </div>
+
+        <div class="calculator__field field">
+          <label class="calculator__field-label" for="calculator-days">Срок займа</label>
+          <p class="calculator__hint" id="calculator-days-hint">Для золота срок&nbsp;— от&nbsp;1 до&nbsp;30 дней. Для техники&nbsp;— от&nbsp;1 до&nbsp;15 дней.</p>
+          <div class="calculator__range">
+            <input class="calculator__range-input" id="calculator-days" type="range" min="1" max="30" step="1" value="15" aria-describedby="calculator-days-hint" data-calculator-days>
+            <div class="calculator__range-labels" aria-hidden="true">
+              <span>1&nbsp;д.</span>
+              <span class="calculator__range-current" data-calculator-days-current>15&nbsp;д.</span>
+              <span data-calculator-days-max>30&nbsp;д.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator__result" aria-live="polite">
+        <p class="calculator__result-title">Сумма займа</p>
+        <p class="calculator__result-sum" data-calculator-out="amount">0&nbsp;₸</p>
+        <dl class="calculator__list">
+          <div class="calculator__row">
+            <dt>Ставка вознаграждения</dt>
+            <dd data-calculator-out="rate">0,28%</dd>
+          </div>
+          <div class="calculator__row">
+            <dt>Срок и&nbsp;дата погашения</dt>
+            <dd data-calculator-out="date">—</dd>
+          </div>
+          <div class="calculator__row">
+            <dt>Вознаграждение за&nbsp;весь срок</dt>
+            <dd data-calculator-out="reward">0&nbsp;₸</dd>
+          </div>
+          <div class="calculator__row">
+            <dt>Общая сумма к&nbsp;возврату</dt>
+            <dd data-calculator-out="total">0&nbsp;₸</dd>
+          </div>
+          <div class="calculator__row">
+            <dt>ГЭСВ</dt>
+            <!-- TODO: формулы ГЭСВ пока нет -->
+            <dd data-calculator-out="gesv">—</dd>
+          </div>
+        </dl>
+        <p class="calculator__result-note">Расчёт является предварительным. Точные условия и&nbsp;итоговая сумма определяются при&nbsp;оформлении договора.</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<div class="modals">
+  <div class="modal" data-type="feedback" role="dialog" aria-modal="true" aria-labelledby="modal-feedback-title">
+    <button class="modal__close" type="button" aria-label="Закрыть">
+      @@include('svg/close.svg', { "class": "modal__close-icon" })
+    </button>
+    <h2 class="modal__title" id="modal-feedback-title">Оставьте заявку</h2>
+    <p class="modal__text">Заполните все обязательные поля</p>
+    <form class="modal__form form">
+      <label class="field">
+        <span class="field__label">Ваше имя</span>
+        <input class="field__input" type="text" name="name" placeholder="Введите имя" autocomplete="name" required>
+      </label>
+      <label class="field">
+        <span class="field__label">Номер телефона</span>
+        <input class="field__input" type="tel" name="phone" placeholder="Введите номер телефона" autocomplete="tel" required>
+      </label>
+      <input type="hidden" name="topic" data-modal-topic>
+      <button class="modal__btn button button-accent" type="submit">Онлайн оценка</button>
+    </form>
+  </div>
+
+  <div class="modal modal--success" data-type="success" role="dialog" aria-modal="true" aria-labelledby="modal-success-title">
+    <button class="modal__close" type="button" aria-label="Закрыть">
+      @@include('svg/close.svg', { "class": "modal__close-icon" })
+    </button>
+    @@include('svg/check.svg', { "class": "modal__icon" })
+    <h2 class="modal__title" id="modal-success-title">Заявка успешно отправлена</h2>
+    <p class="modal__text">Наши менеджеры свяжутся с вами<br> в&nbsp;ближайшее время</p>
+  </div>
+</div>

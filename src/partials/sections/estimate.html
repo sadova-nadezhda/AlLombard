@@ -1,0 +1,17 @@
+<!-- Параметры: id — префикс id заголовка, theme — "light" для белого варианта -->
+<section class="estimate @@if (theme === 'light') {estimate--light} section-pad-bottom" aria-labelledby="@@id-title">
+  <div class="estimate__container container">
+    <div class="estimate__card" data-anim="scale">
+      <div class="estimate__content">
+        <h2 class="estimate__title" id="@@id-title">Получите предварительную оценку имущества</h2>
+        <p class="estimate__text">Напишите нам в&nbsp;WhatsApp, отправьте фото имущества и&nbsp;получите ориентировочную оценку</p>
+        <a class="estimate__btn button @@if (theme === 'light') {button-accent} @@if (theme !== 'light') {button-white}" href="#" target="_blank" rel="noopener">Написать в&nbsp;WhatsApp</a>
+        <ul class="estimate__chips" data-anim-stagger>
+          @@include('estimate-chip.html', { "icon": "clock-check", "text": "Сначала&nbsp;— оценка" })
+          @@include('estimate-chip.html', { "icon": "coins", "text": "Решение&nbsp;— за&nbsp;вами" })
+        </ul>
+      </div>
+      <img class="estimate__img" data-anim="rise" data-anim-delay="0.2" src="img/estimate-calc.png" alt="" width="597" height="450" loading="lazy">
+    </div>
+  </div>
+</section>
