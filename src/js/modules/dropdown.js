@@ -2,7 +2,6 @@ import { $$ } from "./helpers.js";
 
 // ======================
 // Выпадающие списки: [data-dropdown] > [data-dropdown-toggle] + список
-// Открываются по наведению, а на тач-экранах и с клавиатуры — по клику
 // ======================
 export const initDropdowns = () => {
   const dropdowns = $$("[data-dropdown]");
@@ -31,7 +30,7 @@ export const initDropdowns = () => {
       if (canHover.matches) open();
     });
 
-    // Небольшая задержка, чтобы список не закрывался при случайном выходе курсора
+    // Небольшая задержка
     root.addEventListener("mouseleave", () => {
       if (!canHover.matches) return;
       clearTimeout(timer);

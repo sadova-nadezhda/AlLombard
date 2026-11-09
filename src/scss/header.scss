@@ -11,13 +11,17 @@
   z-index: 100;
   color: var(--header-color);
   background: var(--header-bg);
-  transition: translate 0.4s ease, box-shadow 0.3s;
+  transition: translate 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s;
+  will-change: translate;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 
   &.scrolled {
     box-shadow: 0 s(4) s(20) var(--color-shadow);
   }
 
-  // Прячется при скролле вниз, появляется при скролле вверх (main.js)
   &.is-hidden {
     translate: 0 -100%;
     box-shadow: none;

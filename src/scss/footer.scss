@@ -10,7 +10,6 @@
     padding-block: s(32);
   }
 
-  // Верх: заголовок, меню, контакты
   &__top {
     display: grid;
     grid-template-columns: s(575) s(424) 1fr;
@@ -63,12 +62,13 @@
   }
 
   &__link {
-    font-size: s(16);
-    line-height: 1.2;
+    font-size: s(14);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
     transition: color 0.3s;
 
     @include mobile {
-      font-size: s(17);
+      font-size: s(16);
     }
 
     @media (hover: hover) {
@@ -78,7 +78,6 @@
     }
   }
 
-  // Логотип-водяной знак во всю ширину контейнера
   &__logo {
     display: block;
     margin-top: s(4);

@@ -7,7 +7,6 @@
 
   --scrollbar-width: 0px;
 
-  // общий вертикальный отступ секций
   --section-pad: #{s(100)};
 
   --color-text: #353C66;
@@ -191,7 +190,6 @@ input:focus-visible {
   }
 }
 
-// Глобальные классы секций
 .section-hidden {
   overflow: hidden;
 }
@@ -208,7 +206,6 @@ input:focus-visible {
   padding-bottom: var(--section-pad);
 }
 
-// Анимации появления (animations.js): до старта элементы скрыты, класс is-shown ставит JS
 .has-anim [data-anim]:not(.is-shown) {
   opacity: 0;
 }

@@ -41,7 +41,6 @@ export const initCalculator = () => {
     daysCurrent.textContent = formatDays(value);
     days.setAttribute("aria-valuetext", `${value} ${pluralDays(value)}`);
 
-    // У краёв текущее значение заменяет подпись min/max (visibility — чтобы подписи не теряли место)
     const edge = value === min ? "min" : value === max ? "max" : "";
     if (edge) daysCurrent.dataset.edge = edge;
     else daysCurrent.removeAttribute("data-edge");
@@ -68,7 +67,6 @@ export const initCalculator = () => {
     calculate();
   };
 
-  // Максимальный срок зависит от вида залога
   type.addEventListener("change", () => {
     const max = type.selectedOptions[0]?.dataset.maxDays || 30;
     days.max = max;
@@ -77,7 +75,6 @@ export const initCalculator = () => {
     update();
   });
 
-  // Только цифры, разряды через пробел
   amount.addEventListener("input", () => {
     const sum = getAmount();
     amount.value = sum ? sum.toLocaleString("ru-RU") : "";

@@ -46,7 +46,6 @@
     border-radius: s(18);
   }
 
-  // Карточка «Остались вопросы?»
   &__aside {
     grid-area: aside;
     display: flex;
@@ -100,7 +99,6 @@
     }
   }
 
-  // Картинка шире карточки: монеты обрезаются по краям
   &__aside-img {
     flex-shrink: 0;
     width: s(325);
@@ -121,7 +119,6 @@
     }
   }
 
-  // Основная карточка калькулятора
   &__card {
     grid-area: card;
     display: grid;
@@ -188,7 +185,6 @@
     line-height: 1.3;
   }
 
-  // Поля с иконкой справа
   &__select,
   &__amount {
     position: relative;
@@ -203,7 +199,6 @@
     appearance: none;
     cursor: pointer;
 
-    // Пока ничего не выбрано — цвет плейсхолдера
     &:has(option[value=""]:checked) {
       color: var(--color-text-lg);
     }
@@ -233,7 +228,6 @@
     transform: translateY(-50%);
   }
 
-  // Ползунок срока: --progress (0…1) выставляет JS
   &__range {
     --progress: 0.5;
     --thumb: #{s(14)};
@@ -315,7 +309,6 @@
     line-height: 1.3;
   }
 
-  // Текущее значение едет за бегунком, у краёв прижимается к ним
   &__range-current {
     position: absolute;
     top: 0;
@@ -336,7 +329,6 @@
     }
   }
 
-  // Синий блок с результатом
   &__result {
     display: flex;
     flex-direction: column;

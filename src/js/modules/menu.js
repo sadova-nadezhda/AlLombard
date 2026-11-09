@@ -36,7 +36,6 @@ export const initMenu = ({ scrollLock } = {}) => {
     }
   });
 
-  // На десктопе меню не нужно — сбрасываем состояние
   window.matchMedia("(min-width: 1025px)").addEventListener("change", (e) => {
     if (e.matches) close();
   });

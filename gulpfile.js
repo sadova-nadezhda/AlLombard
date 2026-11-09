@@ -21,7 +21,7 @@ let isProd = false;
 // Настройки
 // ======================
 const config = {
-  webp: { quality: 80, effort: 5 },
+  webp: { quality: 80, effort: 5, smartSubsample: true }, // smartSubsample — чётче цветные края и мелкий текст
   maxImageWidth: 2560, // картинки шире будут уменьшены
 };
 

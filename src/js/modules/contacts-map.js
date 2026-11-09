@@ -39,7 +39,7 @@ export const initContactsMap = () => {
     return `${GIS_URL}/${select.value}/search/${encodeURIComponent(getName(btn))}`;
   };
 
-  // HTML-маркер без стандартной иконки: левый верхний угол элемента — в точке координат
+  // HTML-маркер без стандартной иконки
   const htmlMarker = (coords, html, options = {}) =>
     L.marker(coords, {
       icon: L.divIcon({ html, className: "contacts-map__marker", iconSize: null }),
@@ -76,12 +76,10 @@ export const initContactsMap = () => {
     link.textContent = "Открыть в 2gis";
 
     el.append(title, link);
-    // Клики и перетаскивание внутри попапа не передаются карте
     L.DomEvent.disableClickPropagation(el);
     popup = htmlMarker(getCoords(btn), el, { zIndexOffset: 1000 });
   };
 
-  // Прокрутить список так, чтобы адрес был виден (без прокрутки страницы)
   const revealInList = (btn) => {
     const list = currentList();
     const listRect = list.getBoundingClientRect();
@@ -100,7 +98,6 @@ export const initContactsMap = () => {
     openPopup(btn);
   };
 
-  // Показать все адреса города
   const fitCity = () => {
     const points = currentButtons().map(getCoords);
     if (!map || !points.length) return;
@@ -110,7 +107,6 @@ export const initContactsMap = () => {
       return;
     }
 
-    // Сверху отступ больше: метка рисуется над точкой
     map.fitBounds(points, {
       paddingTopLeft: [s(40), s(80)],
       paddingBottomRight: [s(40), s(40)],
@@ -140,12 +136,10 @@ export const initContactsMap = () => {
 
   const initMap = () => {
     const [first] = currentButtons().map(getCoords);
-    // Кнопок зума нет по макету: масштаб колесом, жестами и двойным кликом
     map = L.map(container, { center: first, zoom: 12, zoomControl: false });
     map.attributionControl.setPrefix(false);
     L.tileLayer(TILES_URL, { attribution: TILES_ATTRIBUTION, maxZoom: 19 }).addTo(map);
     // Колесо над картой масштабирует её, а не прокручивает страницу.
-    // Ставится только после создания карты: пустой блок не должен блокировать скролл
     container.setAttribute("data-lenis-prevent", "");
     renderMarkers();
     fitCity();

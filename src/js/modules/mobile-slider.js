@@ -1,9 +1,9 @@
 import { $$ } from "./helpers.js";
 import { s } from "./multiplier.js";
+import { getAutoplayOptions, bindAutoplay } from "./autoplay.js";
 
 // ======================
-// Слайдеры только для мобильных: [data-mobile-slider] (.swiper > .swiper-wrapper > .swiper-slide)
-// Отступ между слайдами — data-slider-gap в px макета. На экранах шире 767px Swiper уничтожается
+// Слайдеры только для мобильных
 // ======================
 export const initMobileSliders = () => {
   const roots = $$("[data-mobile-slider]");
@@ -15,24 +15,27 @@ export const initMobileSliders = () => {
     root,
     gap: Number(root.dataset.sliderGap) || 0,
     swiper: null,
+    unbindAutoplay: null,
   }));
 
   const toggle = () => {
     items.forEach((item) => {
       if (mq.matches && !item.swiper) {
         item.swiper = new Swiper(item.root, {
+          ...getAutoplayOptions(),
           slidesPerView: "auto",
           spaceBetween: s(item.gap),
           watchSlidesProgress: true,
         });
+        item.unbindAutoplay = bindAutoplay(item.swiper);
       } else if (!mq.matches && item.swiper) {
+        item.unbindAutoplay();
         item.swiper.destroy(true, true);
         item.swiper = null;
       }
     });
   };
 
-  // Пересчёт отступов после изменения multiplier
   const update = () => {
     items.forEach(({ swiper, gap }) => {
       if (!swiper) return;

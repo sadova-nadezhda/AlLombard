@@ -103,6 +103,8 @@
   }
 
   &__slider {
+    width: 100%;
+
     @include mobile {
       overflow: visible;
     }

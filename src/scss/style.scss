@@ -5,7 +5,7 @@
 @use "vendor/leaflet";
 @use "global";
 
-// Компоненты (до шапки и секций, чтобы их модификаторы перекрывали базу)
+// Компоненты
 @use "components/buttons";
 @use "components/field";
 @use "components/label";

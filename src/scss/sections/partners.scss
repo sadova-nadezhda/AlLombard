@@ -27,13 +27,11 @@
     }
   }
 
-  // Заголовок секции оформлен как лейбл
   &__title {
     font: 400 s(14)/1 var(--font-main);
   }
 
   &__nav {
-    // Swiper ставит .swiper-button-lock, когда все слайды помещаются
     &:has(.swiper-button-lock) {
       display: none;
     }
@@ -44,13 +42,10 @@
   }
 
   &__slider {
-    // margin: auto у .swiper отключает растягивание во flex-колонке
     width: 100%;
-    // Swiper Grid считает высоту слайда от контейнера: 2 карточки по 150 + отступ 20
     height: s(320);
 
     @include mobile {
-      // 2 карточки по 148 + отступ 8
       height: s(304);
       overflow: visible;
     }

@@ -47,6 +47,20 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter_24pt-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter_24pt-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 html.lenis,
 html.lenis body {
   height: auto;
@@ -1986,7 +2000,13 @@ input:focus-visible {
   z-index: 100;
   color: var(--header-color);
   background: var(--header-bg);
-  transition: translate 0.4s ease, box-shadow 0.3s;
+  transition: translate 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s;
+  will-change: translate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .header {
+    transition: none;
+  }
 }
 .header.scrolled {
   box-shadow: 0 calc(var(--width-multiplier) * 4) calc(var(--width-multiplier) * 20) var(--color-shadow);
@@ -2328,13 +2348,14 @@ input:focus-visible {
   }
 }
 .footer__link {
-  font-size: calc(var(--width-multiplier) * 16);
-  line-height: 1.2;
+  font-size: calc(var(--width-multiplier) * 14);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
   transition: color 0.3s;
 }
 @media (max-width: 767px) {
   .footer__link {
-    font-size: calc(var(--width-multiplier) * 17);
+    font-size: calc(var(--width-multiplier) * 16);
   }
 }
 @media (hover: hover) {
@@ -2880,6 +2901,9 @@ input:focus-visible {
   .advantages__btn {
     margin-top: calc(var(--width-multiplier) * 24);
   }
+}
+.advantages__slider {
+  width: 100%;
 }
 @media (max-width: 767px) {
   .advantages__slider {
@@ -4389,6 +4413,7 @@ input:focus-visible {
 .contacts-map__map {
   grid-area: map;
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   background-color: var(--color-border);
   border-radius: calc(var(--width-multiplier) * 18);
@@ -4714,7 +4739,7 @@ input:focus-visible {
   flex-shrink: 0;
   align-self: flex-start;
   width: calc(var(--width-multiplier) * 325);
-  height: 100%;
+  height: auto;
   border-radius: calc(var(--width-multiplier) * 8);
   border: 1px solid #ECECEC;
 }

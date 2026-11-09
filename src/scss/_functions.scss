@@ -1,7 +1,5 @@
 @use "sass:math";
 
-// s(20) или s(20px) → calc(var(--width-multiplier) * 20)
-// Аналог s() из JS: размер масштабируется от --width-base
 @function s($value) {
   @if not math.is-unitless($value) {
     $value: math.div($value, $value * 0 + 1);
@@ -9,7 +7,6 @@
   @return calc(var(--width-multiplier) * #{$value});
 }
 
-// Брейкпоинты синхронизированы с getWidthMultiplier() в JS
 @mixin mobile { @media (max-width: 767px) { @content; } }
 @mixin tablet { @media (max-width: 1024px) { @content; } }
 @mixin desktop { @media (min-width: 1025px) { @content; } }

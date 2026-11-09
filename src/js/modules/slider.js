@@ -1,13 +1,12 @@
 import { $$ } from "./helpers.js";
 import { s } from "./multiplier.js";
+import { getAutoplayOptions, bindAutoplay } from "./autoplay.js";
 
 // ======================
 // Слайдеры секций: [data-slider="<пресет>"], стрелки .slider-btn внутри секции
-// Отступ между слайдами — в px макета: gap[0] на мобильном, gap[1] на остальных экранах
 // ======================
 const presets = {
   // Два ряда (Swiper Grid), заполнение по колонкам
-  // grid повторяется в брейкпоинтах: без него Swiper отключает сетку при смене брейкпоинта
   partners: {
     gap: [8, 20],
     options: {
@@ -19,7 +18,6 @@ const presets = {
       },
     },
   },
-  // На мобильном ширина слайда задаётся в CSS
   reviews: {
     gap: [8, 20],
     options: {
@@ -51,6 +49,7 @@ export const initSliders = () => {
     const section = root.closest("section");
 
     const swiper = new Swiper(root, {
+      ...getAutoplayOptions(),
       ...options,
       spaceBetween: getGap(gap),
       navigation: {
@@ -58,11 +57,11 @@ export const initSliders = () => {
         nextEl: section?.querySelector(".slider-btn--next"),
       },
     });
+    bindAutoplay(swiper);
 
     return { swiper, gap };
   });
 
-  // Пересчёт отступов после изменения multiplier
   const update = () => {
     sliders.forEach(({ swiper, gap }) => {
       swiper.params.spaceBetween = getGap(gap);

@@ -10,7 +10,6 @@
     grid-template-rows: auto s(640);
     gap: s(30) s(20);
 
-    // Макета для планшета нет: раскладка как на мобильном — панель над картой
     @include tablet {
       grid-template-areas:
         "head"
@@ -42,7 +41,6 @@
     }
   }
 
-  // Панель с городом, адресами и контактами
   &__panel {
     grid-area: panel;
     display: flex;
@@ -64,7 +62,6 @@
     flex-direction: column;
     gap: s(12);
 
-    // Блок адресов забирает оставшуюся высоту панели, список скроллится внутри
     &--addresses {
       flex: 1;
       min-height: 0;
@@ -105,7 +102,6 @@
     overflow-y: auto;
     overscroll-behavior: contain;
 
-    // Стандартные свойства отключают ::-webkit-scrollbar в Chrome, поэтому только для Firefox
     @supports not selector(::-webkit-scrollbar) {
       scrollbar-width: thin;
       scrollbar-color: var(--color-accent) transparent;
@@ -140,7 +136,6 @@
     text-align: left;
     border-radius: s(4);
 
-    // Маркер списка
     &::before {
       content: "";
       flex-shrink: 0;
@@ -250,6 +245,7 @@
   &__map {
     grid-area: map;
     position: relative;
+    isolation: isolate;
     overflow: hidden;
     background-color: var(--color-border);
     border-radius: s(18);
@@ -262,7 +258,6 @@
       height: s(450);
     }
 
-    // Переопределения стилей Leaflet
     &.leaflet-container {
       font: inherit;
       background-color: var(--color-border);
@@ -272,7 +267,6 @@
       color: inherit;
     }
 
-    // Подпись OpenStreetMap (обязательна по лицензии)
     .leaflet-control-attribution {
       padding: s(2) s(8);
       font-size: s(10);
@@ -287,13 +281,11 @@
     }
   }
 
-  // Обёртка HTML-маркера Leaflet: без стандартного фона и рамки divIcon
   &__marker {
     background: none;
     border: 0;
   }
 
-  // Метка на карте: точка привязки — кончик метки
   &__pin {
     display: block;
     width: s(46);
@@ -320,7 +312,6 @@
     height: 100%;
   }
 
-  // Попап выбранного адреса: левый край — под кончиком метки
   &__popup {
     display: flex;
     flex-direction: column;

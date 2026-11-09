@@ -20,22 +20,43 @@ import { initAnimations } from "./modules/animations.js";
   const initHeader = () => {
     const header = $(".header");
     if (!header) return;
+    const HIDE_DELTA = 10;
+    const SHOW_DELTA = 40;
     let lastY = window.scrollY;
+    let delta = 0;
+    let ticking = false;
 
-    // .scrolled — страница прокручена; .is-hidden — шапка уехала вверх при скролле вниз
     const update = () => {
-      const y = window.scrollY;
+      ticking = false;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const y = Math.min(Math.max(window.scrollY, 0), Math.max(max, 0));
       header.classList.toggle("scrolled", y > 10);
-      if (Math.abs(y - lastY) < 5) return; // порог от дрожания
-      // Не прячем, пока открыто меню или выпадающий список языков
-      const busy = header.classList.contains("is-open") || header.querySelector(".is-open");
-      header.classList.toggle("is-hidden", y > lastY && y > header.offsetHeight && !busy);
+
+      const diff = y - lastY;
       lastY = y;
+      if (!diff) return;
+      delta = Math.sign(diff) === Math.sign(delta) ? delta + diff : diff;
+
+      const busy = header.classList.contains("is-open") || header.querySelector(".is-open");
+      if (busy || y <= header.offsetHeight) {
+        header.classList.remove("is-hidden");
+      } else if (delta > HIDE_DELTA) {
+        header.classList.add("is-hidden");
+      } else if (delta < -SHOW_DELTA) {
+        header.classList.remove("is-hidden");
+      }
     };
 
     update();
-    window.addEventListener("scroll", update, { passive: true });
-    // Фокус с клавиатуры внутри шапки — показываем её
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      },
+      { passive: true },
+    );
     header.addEventListener("focusin", () => header.classList.remove("is-hidden"));
   };
 
@@ -52,8 +73,8 @@ import { initAnimations } from "./modules/animations.js";
     const mobileSliders = initMobileSliders();
     const sliders = initSliders();
     const menu = initMenu({ scrollLock });
-    const modals = initModals({ scrollLock, closeMobileMenu: menu?.close }); // modals.open("success") — открыть из кода
-    initAnimations(); // после слайдеров: ScrollTrigger меряет уже готовую раскладку
+    const modals = initModals({ scrollLock, closeMobileMenu: menu?.close });
+    initAnimations();
 
     refreshLayout();
 
