@@ -129,10 +129,6 @@
       translate: 0 s(-6);
       box-shadow: 0 s(16) s(40) var(--color-shadow);
     }
-
-    &:hover .pledge-card__img {
-      scale: 1.05;
-    }
   }
 
   &::before {
@@ -191,8 +187,6 @@
     width: var(--img-w);
     max-width: none;
     height: auto;
-    transform-origin: 50% 100%;
-    transition: scale 0.5s ease;
   }
 
   &--gold {

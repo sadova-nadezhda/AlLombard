@@ -3118,9 +3118,6 @@ input:focus-visible {
     translate: 0 calc(var(--width-multiplier) * -6);
     box-shadow: 0 calc(var(--width-multiplier) * 16) calc(var(--width-multiplier) * 40) var(--color-shadow);
   }
-  .pledge-card:hover .pledge-card__img {
-    scale: 1.05;
-  }
 }
 .pledge-card::before {
   content: "";
@@ -3176,8 +3173,6 @@ input:focus-visible {
   width: var(--img-w);
   max-width: none;
   height: auto;
-  transform-origin: 50% 100%;
-  transition: scale 0.5s ease;
 }
 .pledge-card--gold {
   grid-area: gold;
