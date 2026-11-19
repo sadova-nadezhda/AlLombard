@@ -2857,14 +2857,9 @@ input:focus-visible {
 .hero--side {
   padding-bottom: calc(var(--width-multiplier) * 100);
 }
-@media (max-width: 1024px) {
-  .hero--side {
-    padding-bottom: calc(var(--width-multiplier) * 130);
-  }
-}
 @media (max-width: 767px) {
   .hero--side {
-    padding-bottom: calc(var(--width-multiplier) * 110);
+    padding-bottom: calc(var(--width-multiplier) * 84);
   }
 }
 .hero--side .hero__container {
@@ -3872,7 +3867,7 @@ input:focus-visible {
   .calculator__aside {
     flex-direction: column;
     align-items: center;
-    padding: calc(var(--width-multiplier) * 24) calc(var(--width-multiplier) * 16) 0;
+    padding: calc(var(--width-multiplier) * 24) calc(var(--width-multiplier) * 16);
     text-align: center;
   }
 }

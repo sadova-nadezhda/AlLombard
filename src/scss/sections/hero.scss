@@ -233,15 +233,12 @@
     }
   }
 
+  // Отступ равен заходу .section-rounded, чтобы картинка прилегала к низу
   &--side {
     padding-bottom: s(100);
 
-    @include tablet {
-      padding-bottom: s(130);
-    }
-
     @include mobile {
-      padding-bottom: s(110);
+      padding-bottom: s(84);
     }
   }
 
