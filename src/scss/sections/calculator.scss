@@ -15,12 +15,9 @@
         "card"
         "aside";
       grid-template-columns: 100%;
-      gap: s(20);
+      gap: s(24);
     }
 
-    @include mobile {
-      gap: s(16);
-    }
   }
 
   &__head {
@@ -182,6 +179,9 @@
   &__field-label {
     font: 500 s(18)/1.2 var(--font-main);
     letter-spacing: 0;
+    @include mobile {
+      font-size: s(16);
+    }
   }
 
   &__hint {
