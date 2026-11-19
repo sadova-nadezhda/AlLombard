@@ -1,0 +1,14 @@
+<section class="pawn-steps section-rounded section-pad section-hidden" aria-labelledby="pawn-steps-title">
+  <div class="pawn-steps__container container">
+    <h2 class="pawn-steps__title" id="pawn-steps-title" data-anim="fade-up" data-anim-start="top bottom">Как заложить ювелирные изделия в&nbsp;ломбард?</h2>
+
+    <div class="pawn-steps__slider swiper" data-mobile-slider data-slider-gap="8" data-anim-stagger=".pawn-step-card" data-anim-start="top bottom">
+      <ol class="pawn-steps__list swiper-wrapper">
+        @@include('pawn-step-card.html', { "num": "01", "text": "Отправьте фото имущества и&nbsp;получите ориентировочную сумму", "img": "img/pawn-step-1.png", "width": "218", "height": "206" })
+        @@include('pawn-step-card.html', { "num": "02", "text": "Наш эксперт проверит пробу, вес и&nbsp;состояние ювелирного изделия", "img": "img/pawn-step-2.png", "width": "211", "height": "188" })
+        @@include('pawn-step-card.html', { "num": "03", "text": "Получите предложение и&nbsp;заключите договор", "img": "img/pawn-step-3.png", "width": "162", "height": "164" })
+        @@include('pawn-step-card.html', { "num": "04", "text": "Получите согласованную сумму способом, доступным в&nbsp;отделении", "img": "img/pawn-step-4.png", "width": "181", "height": "205" })
+      </ol>
+    </div>
+  </div>
+</section>

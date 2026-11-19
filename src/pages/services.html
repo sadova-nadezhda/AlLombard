@@ -1,0 +1,17 @@
+@@include('head.html', { "title": "Услуги", "description": "" })
+@@include('header.html', { "page": "services", "theme": "accent" })
+
+<main class="main">
+  @@include('sections/hero.html', { "mod": "services" })
+  @@include('sections/pawn-steps.html')
+  @@include('sections/pledge.html', { "title": "Виды залога", "tag": "h2" })
+  @@include('sections/estimate.html', { "id": "estimate", "theme": "inline", "title": "Получите онлайн оценку за&nbsp;15&nbsp;минут", "text": "Напишите нам на&nbsp;WhatsApp, отправьте фото имущества и&nbsp;получите ориентировочную сумму" })
+  @@include('sections/calculator.html')
+  @@include('sections/contacts-map.html')
+  @@include('sections/partners.html')
+  @@include('sections/reviews.html')
+  @@include('sections/estimate.html', { "id": "estimate-bottom", "theme": "inline", "title": "Получите онлайн оценку за&nbsp;15&nbsp;минут", "text": "Напишите нам на&nbsp;WhatsApp, отправьте фото имущества и&nbsp;получите ориентировочную сумму" })
+</main>
+
+@@include('footer.html')
+@@include('scripts.html')

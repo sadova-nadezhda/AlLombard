@@ -1,0 +1,11 @@
+@@include('head.html', { "title": "Документы", "description": "Документы" })
+@@include('header.html', { "page": "docs", "theme": "light" })
+
+<main class="main">
+  @@include('sections/docs.html')
+  @@include('sections/docs-reports.html')
+  @@include('sections/estimate.html', { "id": "estimate", "theme": "inline", "title": "Получите онлайн оценку за&nbsp;15&nbsp;минут", "text": "Напишите нам на&nbsp;WhatsApp, отправьте фото имущества и&nbsp;получите ориентировочную сумму" })
+</main>
+
+@@include('footer.html')
+@@include('scripts.html')

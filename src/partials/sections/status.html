@@ -1,0 +1,12 @@
+<section class="status status--@@mod">
+  @@if (mod === 'thanks') {<img class="status__img" src="img/gold-hand-2.png" alt="" width="619" height="580">}
+  <div class="status__container container">
+    <div class="status__content">
+      <h1 class="status__title">@@title</h1>
+      <p class="status__text">@@text</p>
+      <a class="status__btn button button-accent" href="index.html">Вернуться на&nbsp;главную</a>
+    </div>
+    
+    @@if (mod === 'error') {<p class="status__code" aria-hidden="true">404</p>}
+  </div>
+</section>

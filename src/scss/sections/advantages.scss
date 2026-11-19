@@ -1,16 +1,6 @@
 @use "../functions" as *;
 
 .advantages {
-  position: relative;
-  margin-top: s(-100);
-  background-color: var(--color-bg);
-  border-radius: s(40) s(40) 0 0;
-
-  @include mobile {
-    margin-top: s(-84);
-    border-radius: s(18) s(18) 0 0;
-  }
-
   &__container {
     position: relative;
     padding-block: s(120);
@@ -189,6 +179,7 @@
     background-color: var(--color-accent);
     border-radius: 50%;
     font: 400 s(18)/1 var(--font-main);
+    letter-spacing: 0;
     transition: color 0.3s, background-color 0.3s, scale 0.3s;
   }
 

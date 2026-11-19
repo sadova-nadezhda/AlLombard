@@ -77,6 +77,7 @@
     background-color: var(--color-white-15);
     border-radius: s(8);
     font: 500 s(16)/1.2 var(--font-main);
+    letter-spacing: 0;
   }
 
   &__chip-icon {
@@ -119,5 +120,65 @@
 
   &--light &__chip {
     background-color: var(--color-border);
+  }
+
+  &--inline &__card {
+    grid-template-columns: 1fr s(340);
+    align-items: end;
+    gap: s(40);
+    padding: 0 s(85) 0 s(50);
+    border: 1px solid var(--color-border);
+
+    @include tablet {
+      grid-template-columns: 100%;
+      gap: 0;
+      padding: s(40) s(40) 0;
+    }
+
+    @include mobile {
+      padding: s(30) s(20) 0;
+    }
+  }
+
+  &--inline &__content {
+    align-self: center;
+    padding-block: s(50);
+
+    @include desktop {
+      grid-column: 1;
+      height: auto;
+    }
+
+    @include tablet {
+      padding-block: 0;
+    }
+  }
+
+  &--inline &__btn {
+    align-self: flex-start;
+    width: auto;
+
+    @include mobile {
+      align-self: stretch;
+      width: 100%;
+    }
+  }
+
+  &--inline &__img {
+    width: s(340);
+
+    @include desktop {
+      grid-column: 2;
+      margin: 0;
+    }
+
+    @include tablet {
+      margin: s(30) 0 0;
+    }
+
+    @include mobile {
+      width: s(280);
+      margin: s(24) 0 0;
+    }
   }
 }

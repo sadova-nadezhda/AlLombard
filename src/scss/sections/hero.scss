@@ -1,7 +1,7 @@
 @use "../functions" as *;
 
 .hero {
-  padding-bottom: s(40);
+  padding-bottom: s(100);
   color: var(--color-white);
   background: var(--color-accent);
 
@@ -58,6 +58,7 @@
   }
 
   &__title {
+    font-weight: 500;
     line-height: 1;
 
     @include tablet {
@@ -119,7 +120,7 @@
   &__stat {
     position: absolute;
     left: s(40);
-    bottom: s(120);
+    bottom: s(45);
     z-index: 1;
     display: flex;
     align-items: center;
@@ -140,7 +141,7 @@
     flex-shrink: 0;
     width: s(120);
     height: s(120);
-    margin: s(-16) s(-20);
+    margin: s(-16) s(-3) s(-16) s(-21);
 
     @include mobile {
       width: s(88);
@@ -162,6 +163,7 @@
   &__stat-text {
     display: block;
     margin-top: s(2);
+    line-height: 1.2;
 
     @include mobile {
       margin-top: s(6);
@@ -184,10 +186,10 @@
 
   &__visual {
     position: absolute;
-    left: 50%;
-    bottom: s(50);
-    transform: translateX(-50%);
-    width: s(680);
+    left: s(411);
+    bottom: 0;
+    width: s(534);
+    overflow: hidden;
 
     &::after {
       content: "";
@@ -208,7 +210,7 @@
       justify-self: center;
       width: s(620);
       margin: s(16) 0 s(-10);
-      transform: none;
+      overflow: visible;
     }
 
     @include mobile {
@@ -220,8 +222,87 @@
 
   &__img {
     display: block;
-    width: 100%;
+    width: s(746);
     max-width: none;
     height: auto;
+    margin-left: s(-48);
+
+    @include tablet {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  &--side {
+    padding-bottom: s(100);
+
+    @include tablet {
+      padding-bottom: s(130);
+    }
+
+    @include mobile {
+      padding-bottom: s(110);
+    }
+  }
+
+  &--side &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 0;
+    padding-top: 0;
+
+    @include tablet {
+      display: grid;
+    }
+  }
+
+  &--side &__content {
+    width: s(555);
+    margin: 0;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &--side &__text {
+    color: var(--color-white);
+
+    @include desktop {
+      font-size: s(18);
+    }
+  }
+
+  &--side &__visual {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    order: -1;
+    flex-shrink: 0;
+    width: s(770);
+    overflow: visible;
+
+    &::after {
+      content: none;
+    }
+
+    .hero__img {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    @include tablet {
+      order: 0;
+      justify-self: center;
+      width: s(620);
+      margin: s(32) 0 0;
+    }
+
+    @include mobile {
+      justify-self: center;
+      width: 100%;
+      margin: s(16) 0 0;
+    }
   }
 }

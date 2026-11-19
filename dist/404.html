@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Страница не найдена</title>
-  <meta name="description" content="">
+  <meta name="description" content="Страница не найдена">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -13,8 +13,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Анимации: has-anim прячет [data-anim] до старта GSAP (animations.js).
-       Страховка: если скрипты не запустились за 3 с — показываем контент -->
   <script>
     (function () {
       var html = document.documentElement;
@@ -66,13 +64,13 @@
         <nav class="header__nav" aria-label="Основное меню">
           <ul class="header__menu">
             <li class="header__menu-item">
-              <a class="header__menu-link" href="#">Что принимаем</a>
+              <a class="header__menu-link " href="catalog.html">Что принимаем</a>
             </li>
             <li class="header__menu-item">
               <a class="header__menu-link" href="#">Онлайн калькулятор</a>
             </li>
             <li class="header__menu-item">
-              <a class="header__menu-link" href="#">Контакты</a>
+              <a class="header__menu-link " href="contacts.html">Контакты</a>
             </li>
             <li class="header__menu-item">
               <a class="header__menu-link " href="about.html">О компании</a>
@@ -108,13 +106,20 @@
   </div>
 </header>
 
-<main class="main">
-  <section class="error">
-    <div class="error__container container">
-      <h1 class="error__title">404</h1>
-      <a class="error__link" href="index.html">На главную</a>
+<main class="main main--status">
+  <section class="status status--error">
+    
+    <div class="status__container container">
+      <div class="status__content">
+        <h1 class="status__title">Ой! Страница не&nbsp;найдена</h1>
+        <p class="status__text">Похоже, вы&nbsp;перешли по&nbsp;несуществующей ссылке или страница была удалена</p>
+        <a class="status__btn button button-accent" href="index.html">Вернуться на&nbsp;главную</a>
+      </div>
+    
+      <p class="status__code" aria-hidden="true">404</p>
     </div>
   </section>
+
 </main>
 
 <footer class="footer">
@@ -124,17 +129,17 @@
 
       <nav class="footer__nav" aria-label="Меню в подвале">
         <ul class="footer__menu">
-          <li class="footer__menu-item"><a class="footer__link" href="#">Что принимаем</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Услуги</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Каталог</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="catalog.html">Что принимаем</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="services.html">Услуги</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="catalog.html">Каталог</a></li>
           <li class="footer__menu-item"><a class="footer__link" href="about.html">О компании</a></li>
           <li class="footer__menu-item"><a class="footer__link" href="#">Отзывы</a></li>
         </ul>
         <ul class="footer__menu">
-          <li class="footer__menu-item"><a class="footer__link" href="#">Контакты</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Новости</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Документы</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">FAQ</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="contacts.html">Контакты</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="news.html">Новости</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="docs.html">Документы</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="faq.html">FAQ</a></li>
         </ul>
       </nav>
 
@@ -172,7 +177,7 @@
       <p class="footer__copy">© 2026 AL LOMBARD. Все права защищены.</p>
       <a class="footer__bottom-link" href="#">Политика конфиденциальности</a>
       <a class="footer__bottom-link" href="#">Публичная оферта</a>
-      <a class="footer__bottom-link" href="https://factum.agency/" target="_blank" rel="noopener">Сделано командой <span class="footer__dev">factum.</span></a>
+      <a class="footer__bottom-link footer__bottom-link--dev" href="https://factum.agency/" target="_blank" rel="noopener">Сделано командой <span class="footer__dev">factum.</span></a>
     </div>
 
     <p class="footer__legal">Ломбард осуществляет деятельность на&nbsp;территории Республики Казахстан в&nbsp;соответствии с&nbsp;Законом РК «О&nbsp;микрофинансовой деятельности» и&nbsp;другими нормативными правовыми актами Республики Казахстан. Деятельность ломбарда подлежит государственному регулированию, контролю и&nbsp;надзору со&nbsp;стороны Агентства Республики Казахстан по&nbsp;регулированию и&nbsp;развитию финансового рынка (АРРФР). Компания имеет лицензию на&nbsp;осуществление микрофинансовой деятельности, выданную АРРФР, и&nbsp;включена в&nbsp;соответствующий реестр организаций, осуществляющих микрофинансовую деятельность. Наличие лицензии и&nbsp;включение в&nbsp;реестр подтверждают право компании осуществлять ломбардную деятельность в&nbsp;рамках законодательства Республики Казахстан.</p>

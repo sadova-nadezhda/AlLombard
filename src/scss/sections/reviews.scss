@@ -87,6 +87,10 @@
     font-size: s(14);
     line-height: 1.3;
 
+    @include desktop {
+      font-size: s(16);
+    }
+
     @include mobile {
       margin-top: s(8);
       font-size: s(16);
@@ -102,6 +106,11 @@
     padding-top: s(20);
     font-size: s(14);
     color: var(--color-text-lg);
+
+    @include desktop {
+      font-size: s(16);
+      line-height: 1.3;
+    }
   }
 
   &__link {

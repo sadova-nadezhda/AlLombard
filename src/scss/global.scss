@@ -11,6 +11,8 @@
 
   --color-text: #353C66;
   --color-text-lg: rgba(53, 60, 102, 0.8);
+  --color-text-60: rgba(53, 60, 102, 0.6);
+  --color-text-20: rgba(53, 60, 102, 0.2);
   --color-bg: #F5F6FA;
   --color-white: #FFFFFF;
   --color-accent: #2B70E2;
@@ -19,6 +21,7 @@
   --color-accent-active: #323D82;
   --color-white-15: rgba(255, 255, 255, 0.15);
   --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-white-70: rgba(255, 255, 255, 0.7);
   --color-white-80: rgba(255, 255, 255, 0.8);
   --color-gold: #E3AC4D;
   --color-gold-dark: #C79744;
@@ -91,9 +94,7 @@ ol,
 li,
 figure,
 figcaption,
-blockquote,
-dl,
-dd {
+blockquote {
   margin: 0;
 }
 
@@ -192,6 +193,19 @@ input:focus-visible {
 
 .section-hidden {
   overflow: hidden;
+}
+
+// Первая секция после синего hero
+.section-rounded {
+  position: relative;
+  margin-top: s(-100);
+  background-color: var(--color-bg);
+  border-radius: s(40) s(40) 0 0;
+
+  @include mobile {
+    margin-top: s(-84);
+    border-radius: s(18) s(18) 0 0;
+  }
 }
 
 .section-pad {

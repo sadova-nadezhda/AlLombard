@@ -1,0 +1,14 @@
+<!-- Параметры: id — уникальный префикс id, question, answer, open — true, чтобы пункт был раскрыт по умолчанию -->
+<li class="faq__item @@if (context.open) {is-open}" data-accordion-item>
+  <h3 class="faq__heading">
+    <button class="faq__toggle" type="button" id="@@id-toggle" aria-expanded="@@if (context.open) {true}@@if (!context.open) {false}" aria-controls="@@id-panel" data-accordion-toggle>
+      <span class="faq__question">@@question</span>
+      @@include('svg/arrow.svg', { "class": "faq__icon" })
+    </button>
+  </h3>
+  <div class="faq__panel" id="@@id-panel" role="region" aria-labelledby="@@id-toggle" data-accordion-panel>
+    <div class="faq__panel-inner">
+      <p class="faq__answer">@@answer</p>
+    </div>
+  </div>
+</li>

@@ -9,13 +9,11 @@
 @use "components/buttons";
 @use "components/field";
 @use "components/label";
+@use "components/tag";
 
 @use "header";
 @use "footer";
 @use "modals";
-
-// Глобальные секции
-@use "sections/feedback";
 
 // Остальные секции подключать сюда:
 @use "sections/hero";
@@ -25,8 +23,15 @@
 @use "sections/gold-loan";
 @use "sections/calculator";
 @use "sections/steps";
+@use "sections/pawn-steps";
 @use "sections/partners";
 @use "sections/contacts-map";
 @use "sections/reviews";
 @use "sections/about";
 @use "sections/awards";
+@use "sections/status";
+@use "sections/faq";
+@use "sections/news";
+@use "sections/news-detail";
+@use "sections/news-other";
+@use "sections/docs";

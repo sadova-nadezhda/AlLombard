@@ -13,8 +13,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Анимации: has-anim прячет [data-anim] до старта GSAP (animations.js).
-       Страховка: если скрипты не запустились за 3 с — показываем контент -->
   <script>
     (function () {
       var html = document.documentElement;
@@ -32,7 +30,7 @@
 <body>
 
 <!-- theme: "accent" — синяя шапка (главная), "light" — светлая -->
-<header class="header header--light">
+<header class="header ">
   <div class="header__container container">
     <div class="header__inner">
       <a class="header__logo" href="index.html" aria-label="AL LOMBARD — на главную">
@@ -66,13 +64,13 @@
         <nav class="header__nav" aria-label="Основное меню">
           <ul class="header__menu">
             <li class="header__menu-item">
-              <a class="header__menu-link" href="#">Что принимаем</a>
+              <a class="header__menu-link " href="catalog.html">Что принимаем</a>
             </li>
             <li class="header__menu-item">
               <a class="header__menu-link" href="#">Онлайн калькулятор</a>
             </li>
             <li class="header__menu-item">
-              <a class="header__menu-link" href="#">Контакты</a>
+              <a class="header__menu-link " href="contacts.html">Контакты</a>
             </li>
             <li class="header__menu-item">
               <a class="header__menu-link is-active" href="about.html">О компании</a>
@@ -82,24 +80,24 @@
 
         <div class="header__actions">
           <div class="header__lang" data-dropdown>
-            <button class="header__lang-toggle button button-outline-accent button-circle" type="button" aria-label="Язык сайта: русский. Выбрать язык" aria-expanded="false" aria-controls="header-lang-list" data-dropdown-toggle>RU</button>
+            <button class="header__lang-toggle button button-outline-white button-circle" type="button" aria-label="Язык сайта: русский. Выбрать язык" aria-expanded="false" aria-controls="header-lang-list" data-dropdown-toggle>RU</button>
             <ul class="header__lang-list" id="header-lang-list">
               <li class="header__lang-item is-current">
-                <a class="header__lang-link button button-outline-accent button-circle" href="#" hreflang="ru" lang="ru" aria-label="Русский" aria-current="true">RU</a>
+                <a class="header__lang-link button button-outline-white button-circle" href="#" hreflang="ru" lang="ru" aria-label="Русский" aria-current="true">RU</a>
               </li>
               <li class="header__lang-item">
-                <a class="header__lang-link button button-outline-accent button-circle" href="#" hreflang="kk" lang="kk" aria-label="Қазақша">KZ</a>
+                <a class="header__lang-link button button-outline-white button-circle" href="#" hreflang="kk" lang="kk" aria-label="Қазақша">KZ</a>
               </li>
               <li class="header__lang-item">
-                <a class="header__lang-link button button-outline-accent button-circle" href="#" hreflang="en" lang="en" aria-label="English">EN</a>
+                <a class="header__lang-link button button-outline-white button-circle" href="#" hreflang="en" lang="en" aria-label="English">EN</a>
               </li>
             </ul>
           </div>
-          <button class="header__btn button button-outline-accent modal-btn" type="button" data-type="feedback">Оставить заявку</button>
+          <button class="header__btn button button-outline-white modal-btn" type="button" data-type="feedback">Оставить заявку</button>
         </div>
       </div>
 
-      <button class="header__burger button button-outline-accent button-circle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-panel">
+      <button class="header__burger button button-outline-white button-circle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-panel">
         <span class="header__burger-line"></span>
         <span class="header__burger-line"></span>
         <span class="header__burger-line"></span>
@@ -109,20 +107,267 @@
 </header>
 
 <main class="main">
-  <section class="about">
-    <div class="about__container container">
-      <h1 class="about__title">О компании</h1>
+  <section class="hero hero--about hero--side section-hidden">
+    <div class="hero__container container">
+      
+
+      <div class="hero__content">
+        
+        <h1 class="hero__title">
+          <span class="hero__title-line"><span class="hero__title-line-inner" data-anim="intro">Крупнейшая сеть</span></span>
+          <span class="hero__title-line"><span class="hero__title-line-inner" data-anim="intro">ломбардов в&nbsp;Казахстане</span></span>
+        </h1>
+        
+        <p class="hero__text" data-anim="intro">Узнайте предварительную сумму займа по фото в WhatsApp. Окончательная оценка — после осмотра в&nbsp;отделении.</p>
+        <a class="hero__btn button button-white" href="#" target="_blank" rel="noopener" data-anim="intro">Оценить по фото</a>
+      </div>
+
+      
+
+      <div class="hero__visual">
+        
+        <img class="hero__img" data-anim="intro" src="img/about-hero.webp" alt="Золотые кольца" width="777" height="376">
+        
+      </div>
     </div>
   </section>
 
-  <section class="feedback section-pad" id="feedback">
-    <div class="feedback__container container">
-      <h2 class="feedback__title">Свяжитесь с нами</h2>
-      <form class="feedback__form form">
-        <input class="feedback__input" type="text" name="name" placeholder="Имя" required>
-        <input class="feedback__input" type="tel" name="phone" placeholder="+7 (___) ___ ____" required>
-        <button class="feedback__btn" type="submit">Отправить</button>
-      </form>
+  <!-- Параметры: class — необязательные доп. классы секции (например, "section-rounded section-pad-top"); start — порог запуска анимации (data-anim-start), например "top bottom", если секция на первом экране -->
+  <section class="partners section-rounded section-pad-top section-pad-bottom section-hidden" aria-labelledby="partners-title">
+    <div class="partners__container container">
+      <div class="partners__head" data-anim-stagger data-anim-start="top bottom">
+        <h2 class="partners__title" id="partners-title">наши партнеры</h2>
+        <div class="slider-nav partners__nav">
+          <button class="slider-btn slider-btn--prev" type="button" aria-label="Предыдущий слайд">
+            <svg class="slider-btn__icon" aria-hidden="true" focusable="false" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.646484 0.646423C0.841747 0.451161 1.15825 0.451161 1.35352 0.646423L7.01074 6.30365C7.20559 6.49894 7.20587 6.81556 7.01074 7.01068L1.35352 12.6669C1.15825 12.8622 0.841746 12.8622 0.646484 12.6669C0.4513 12.4717 0.451248 12.1551 0.646484 11.9599L5.9502 6.65717L0.646484 1.35345C0.451222 1.15819 0.451222 0.841686 0.646484 0.646423Z" fill="currentColor"/>
+            </svg>
+
+          </button>
+          <button class="slider-btn slider-btn--next" type="button" aria-label="Следующий слайд">
+            <svg class="slider-btn__icon" aria-hidden="true" focusable="false" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.646484 0.646423C0.841747 0.451161 1.15825 0.451161 1.35352 0.646423L7.01074 6.30365C7.20559 6.49894 7.20587 6.81556 7.01074 7.01068L1.35352 12.6669C1.15825 12.8622 0.841746 12.8622 0.646484 12.6669C0.4513 12.4717 0.451248 12.1551 0.646484 11.9599L5.9502 6.65717L0.646484 1.35345C0.451222 1.15819 0.451222 0.841686 0.646484 0.646423Z" fill="currentColor"/>
+            </svg>
+
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Два ряда (Swiper Grid), заполнение по колонкам: карточки идут парами «верх — низ». -->
+      <div class="partners__slider swiper" data-slider="partners" data-anim-stagger=".partner-card" data-anim-start="top bottom">
+        <ul class="partners__list swiper-wrapper">
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-1.webp" alt="Alisystems" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-5.webp" alt="Тау-Кен Алтын" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-2.webp" alt="1С" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-6.webp" alt="QazaqOil" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-3.webp" alt="Яндекс Go для бизнеса" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-7.webp" alt="Kcell" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-4.webp" alt="QazPost" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-8.webp" alt="Beeline" loading="lazy">
+            </div>
+          </li>
+
+          <!-- TODO: временные дубли для проверки стрелок — удалить -->
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-1.webp" alt="Alisystems" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-5.webp" alt="Тау-Кен Алтын" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-2.webp" alt="1С" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-6.webp" alt="QazaqOil" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-3.webp" alt="Яндекс Go для бизнеса" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-7.webp" alt="Kcell" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-4.webp" alt="QazPost" loading="lazy">
+            </div>
+          </li>
+
+          <li class="partners__item swiper-slide">
+            <div class="partner-card">
+              <img class="partner-card__logo" src="img/partner-8.webp" alt="Beeline" loading="lazy">
+            </div>
+          </li>
+
+          <!-- /TODO -->
+
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="awards section-pad-bottom section-hidden" aria-labelledby="awards-title">
+    <div class="awards__container container">
+      <div class="awards__head" data-anim-stagger>
+        <h2 class="awards__title" id="awards-title">награды</h2>
+        <div class="slider-nav awards__nav">
+          <button class="slider-btn slider-btn--prev" type="button" aria-label="Предыдущий слайд">
+            <svg class="slider-btn__icon" aria-hidden="true" focusable="false" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.646484 0.646423C0.841747 0.451161 1.15825 0.451161 1.35352 0.646423L7.01074 6.30365C7.20559 6.49894 7.20587 6.81556 7.01074 7.01068L1.35352 12.6669C1.15825 12.8622 0.841746 12.8622 0.646484 12.6669C0.4513 12.4717 0.451248 12.1551 0.646484 11.9599L5.9502 6.65717L0.646484 1.35345C0.451222 1.15819 0.451222 0.841686 0.646484 0.646423Z" fill="currentColor"/>
+            </svg>
+
+          </button>
+          <button class="slider-btn slider-btn--next" type="button" aria-label="Следующий слайд">
+            <svg class="slider-btn__icon" aria-hidden="true" focusable="false" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.646484 0.646423C0.841747 0.451161 1.15825 0.451161 1.35352 0.646423L7.01074 6.30365C7.20559 6.49894 7.20587 6.81556 7.01074 7.01068L1.35352 12.6669C1.15825 12.8622 0.841746 12.8622 0.646484 12.6669C0.4513 12.4717 0.451248 12.1551 0.646484 11.9599L5.9502 6.65717L0.646484 1.35345C0.451222 1.15819 0.451222 0.841686 0.646484 0.646423Z" fill="currentColor"/>
+            </svg>
+
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Высота карточек одна, ширина — по пропорциям грамоты. -->
+      <div class="awards__slider swiper" data-slider="awards" data-anim-stagger=".award-card">
+        <ul class="awards__list swiper-wrapper">
+          <li class="awards__item swiper-slide">
+            <div class="award-card">
+              <img class="award-card__img" src="img/award-1.webp" alt="Алғыс хат от Управления полиции Аль-Фарабийского района г. Шымкента" width="285" height="404" loading="lazy">
+            </div>
+          </li>
+
+          <li class="awards__item swiper-slide">
+            <div class="award-card">
+              <img class="award-card__img" src="img/award-2.webp" alt="Благодарственное письмо от Юго-Восточного отдела полиции г. Караганды" width="285" height="404" loading="lazy">
+            </div>
+          </li>
+
+          <li class="awards__item swiper-slide">
+            <div class="award-card">
+              <img class="award-card__img" src="img/award-3.webp" alt="Алғыс хат от Управления полиции Абайского района г. Шымкента" width="670" height="444" loading="lazy">
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Параметры: mod — "page" для страницы «О компании» -->
+  <section class="about about--page section-pad-bottom" aria-labelledby="about-title">
+    <div class="about__container container">
+      <div class="about__content" data-anim-stagger>
+        <h2 class="about__title" id="about-title">Официально состоим в&nbsp;реестре МФО&nbsp;РК</h2>
+        <div class="about__text">
+          <p>ALLombard.kz&nbsp;— наш официальный сайт в&nbsp;Республике Казахстан. Мы предоставляем микрокредиты под залог золота, техники, смартфонов, игровых приставок и&nbsp;другого движимого имущества. Предварительная оценка стоимости возможна по&nbsp;фото через WhatsApp.</p>
+          <p>ALLombard.kz&nbsp;— наш официальный сайт в&nbsp;Республике Казахстан. Мы предоставляем микрокредиты под залог золота, техники, смартфонов, игровых приставок и&nbsp;другого движимого имущества. Предварительная оценка стоимости возможна по&nbsp;фото через WhatsApp.</p>
+        </div>
+      </div>
+      
+
+      <div class="about__license" data-anim="slide-right" data-anim-delay="0.1">
+        <img class="about__license-img" src="img/license.webp" alt="Скан лицензии ТОО «AL LOMBARD KZ»" width="325" height="404" loading="lazy">
+        <div class="about__license-body">
+          <div class="about__license-head">
+            <h3 class="about__license-title">Лицензия</h3>
+            <div class="about__license-number">13.26.0003.L</div>
+          </div>
+          <div class="about__license-list">
+            <div class="about__license-item">
+              <div class="about__license-name">Наименование организации, осуществляющей микрофинансовую деятельность:</div>
+              <div class="about__license-value">ТОО "AL LOMBARD KZ"</div>
+            </div>
+            <div class="about__license-item">
+              <div class="about__license-name">БИН</div>
+              <div class="about__license-value">080240022292</div>
+            </div>
+            <div class="about__license-item">
+              <div class="about__license-name">Дата выдачи лицензии</div>
+              <div class="about__license-value">2026-07-13</div>
+            </div>
+            <div class="about__license-item">
+              <div class="about__license-name">Дата и&nbsp;номер решения уполномоченного органа о&nbsp;выдаче</div>
+              <div class="about__license-value">29.03.2021, №&nbsp;45</div>
+            </div>
+            <div class="about__license-item">
+              <div class="about__license-name">Дата и&nbsp;номер решения уполномоченного органа о&nbsp;переоформлении</div>
+              <div class="about__license-value">13.07.2026, №38 (ранее ТОО "АЛ ЛОМБАРД", №13.26.0001.L от&nbsp;29.04.2026)</div>
+            </div>
+          </div>
+          <a class="about__license-link" href="https://www.gov.kz/org/ardfm/permissions-notifications/section/1/subsection/9/registry/26" target="_blank" rel="noopener noreferrer">Реестр ломбардов МФО РК</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Параметры: id — префикс id заголовка, theme — "light" для белого варианта, "inline" — белая карточка без чипов (картинка справа); title, text — необязательная замена текстов по умолчанию -->
+  <section class="estimate estimate--light estimate--inline section-pad-bottom" aria-labelledby="estimate-title">
+    <div class="estimate__container container">
+      <div class="estimate__card" data-anim="scale">
+        <div class="estimate__content">
+          <h2 class="estimate__title" id="estimate-title">Получите онлайн оценку за&nbsp;15&nbsp;минут</h2>
+          <p class="estimate__text">Напишите нам на&nbsp;WhatsApp, отправьте фото имущества и&nbsp;получите ориентировочную сумму</p>
+          <a class="estimate__btn button button-accent" href="#" target="_blank" rel="noopener">Написать в&nbsp;WhatsApp</a>
+          
+        </div>
+        <img class="estimate__img" data-anim="rise" data-anim-delay="0.2" src="img/estimate-clock.webp" alt="" width="354" height="256" loading="lazy">
+        
+      </div>
     </div>
   </section>
 
@@ -135,17 +380,17 @@
 
       <nav class="footer__nav" aria-label="Меню в подвале">
         <ul class="footer__menu">
-          <li class="footer__menu-item"><a class="footer__link" href="#">Что принимаем</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Услуги</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Каталог</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="catalog.html">Что принимаем</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="services.html">Услуги</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="catalog.html">Каталог</a></li>
           <li class="footer__menu-item"><a class="footer__link" href="about.html">О компании</a></li>
           <li class="footer__menu-item"><a class="footer__link" href="#">Отзывы</a></li>
         </ul>
         <ul class="footer__menu">
-          <li class="footer__menu-item"><a class="footer__link" href="#">Контакты</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Новости</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Документы</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">FAQ</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="contacts.html">Контакты</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="news.html">Новости</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="docs.html">Документы</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="faq.html">FAQ</a></li>
         </ul>
       </nav>
 
@@ -183,7 +428,7 @@
       <p class="footer__copy">© 2026 AL LOMBARD. Все права защищены.</p>
       <a class="footer__bottom-link" href="#">Политика конфиденциальности</a>
       <a class="footer__bottom-link" href="#">Публичная оферта</a>
-      <a class="footer__bottom-link" href="https://factum.agency/" target="_blank" rel="noopener">Сделано командой <span class="footer__dev">factum.</span></a>
+      <a class="footer__bottom-link footer__bottom-link--dev" href="https://factum.agency/" target="_blank" rel="noopener">Сделано командой <span class="footer__dev">factum.</span></a>
     </div>
 
     <p class="footer__legal">Ломбард осуществляет деятельность на&nbsp;территории Республики Казахстан в&nbsp;соответствии с&nbsp;Законом РК «О&nbsp;микрофинансовой деятельности» и&nbsp;другими нормативными правовыми актами Республики Казахстан. Деятельность ломбарда подлежит государственному регулированию, контролю и&nbsp;надзору со&nbsp;стороны Агентства Республики Казахстан по&nbsp;регулированию и&nbsp;развитию финансового рынка (АРРФР). Компания имеет лицензию на&nbsp;осуществление микрофинансовой деятельности, выданную АРРФР, и&nbsp;включена в&nbsp;соответствующий реестр организаций, осуществляющих микрофинансовую деятельность. Наличие лицензии и&nbsp;включение в&nbsp;реестр подтверждают право компании осуществлять ломбардную деятельность в&nbsp;рамках законодательства Республики Казахстан.</p>

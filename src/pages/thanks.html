@@ -1,0 +1,9 @@
+@@include('head.html', { "title": "Спасибо", "description": "Спасибо за ваш запрос" })
+@@include('header.html', { "page": "thanks", "theme": "light" })
+
+<main class="main main--status">
+  @@include('sections/status.html', { "mod": "thanks", "title": "Спасибо! Заявка отправлена", "text": "Наши менеджеры свяжутся с&nbsp;вами в&nbsp;ближайшее время" })
+</main>
+
+@@include('footer.html')
+@@include('scripts.html')

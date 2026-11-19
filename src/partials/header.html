@@ -15,13 +15,13 @@
         <nav class="header__nav" aria-label="Основное меню">
           <ul class="header__menu">
             <li class="header__menu-item">
-              <a class="header__menu-link" href="#">Что принимаем</a>
+              <a class="header__menu-link @@if (page === 'catalog') {is-active}" href="catalog.html">Что принимаем</a>
             </li>
             <li class="header__menu-item">
               <a class="header__menu-link" href="#">Онлайн калькулятор</a>
             </li>
             <li class="header__menu-item">
-              <a class="header__menu-link" href="#">Контакты</a>
+              <a class="header__menu-link @@if (page === 'contacts') {is-active}" href="contacts.html">Контакты</a>
             </li>
             <li class="header__menu-item">
               <a class="header__menu-link @@if (page === 'about') {is-active}" href="about.html">О компании</a>

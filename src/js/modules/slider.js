@@ -3,7 +3,7 @@ import { s } from "./multiplier.js";
 import { getAutoplayOptions, bindAutoplay } from "./autoplay.js";
 
 // ======================
-// Слайдеры секций: [data-slider="<пресет>"], стрелки .slider-btn внутри секции
+// Слайдеры секций
 // ======================
 const presets = {
   // Два ряда (Swiper Grid), заполнение по колонкам

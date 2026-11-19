@@ -1,7 +1,7 @@
 import { $, $$ } from "./helpers.js";
 
 // ======================
-// Мобильное меню (бургер в шапке)
+// Мобильное меню
 // ======================
 export const initMenu = ({ scrollLock } = {}) => {
   const header = $(".header");

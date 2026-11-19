@@ -1,0 +1,16 @@
+<div class="news-card @@if (context.featured) {news-card--featured}">
+  <div class="news-card__media">
+    <img class="news-card__img" src="@@img" alt="" width="@@width" height="@@height" @@if (!context.eager) {loading="lazy"}>
+  </div>
+  <div class="news-card__body">
+    <h2 class="news-card__title">@@title</h2>
+    <p class="news-card__text">@@text</p>
+    <div class="news-card__footer">
+      <a class="news-card__btn button button-outline-accent @@if (!context.featured) {button-sm}" href="@@href">Подробнее<span class="visually-hidden">: @@title</span></a>
+      <ul class="news-card__tags">
+        <li class="news-card__tag tag">@@tag</li>
+        <li class="news-card__tag tag"><time datetime="@@startIso">@@start</time> - <time datetime="@@endIso">@@end</time></li>
+      </ul>
+    </div>
+  </div>
+</div>

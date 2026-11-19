@@ -1,0 +1,11 @@
+<div class="doc-card">
+  <h3 class="doc-card__title">@@title</h3>
+  <p class="doc-card__text">@@text</p>
+  <div class="doc-card__footer">
+    <a class="doc-card__btn button button-outline-accent button-sm" href="@@href" download>Скачать<span class="visually-hidden">: @@title</span></a>
+    <ul class="doc-card__tags">
+      <li class="tag tag--fill">@@format</li>
+      @@if (context.date) {<li class="tag tag--fill">@@date</li>}
+    </ul>
+  </div>
+</div>

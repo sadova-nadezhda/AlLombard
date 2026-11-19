@@ -1,7 +1,8 @@
-<section class="pledge section-pad-bottom" id="pledge" aria-labelledby="pledge-title">
+<!-- Параметры: title — заголовок, tag — h1/h2, mod — "page" для отдельной страницы (отступ от шапки) -->
+<section class="pledge @@if (context.mod) {pledge--@@mod} section-pad-bottom" id="pledge" aria-labelledby="pledge-title">
   <div class="pledge__container container">
     <p class="label pledge__label" data-anim="fade-up">что принимаем</p>
-    <h2 class="pledge__title" id="pledge-title" data-anim="fade-up" data-anim-delay="0.1">Виды залога</h2>
+    <@@tag class="pledge__title" id="pledge-title" data-anim="fade-up" data-anim-delay="0.1">@@title</@@tag>
     <button class="pledge__btn button s button-outline-accent button-sm modal-btn" type="button" data-type="feedback" data-anim="fade-up" data-anim-delay="0.2">Оставить заявку</button>
 
     <ul class="pledge__list" data-anim-stagger>

@@ -13,6 +13,8 @@ import { initCalculator } from "./modules/calculator.js";
 import { initSliders } from "./modules/slider.js";
 import { initContactsMap } from "./modules/contacts-map.js";
 import { initAnimations } from "./modules/animations.js";
+import { initAccordions } from "./modules/accordion.js";
+import { initShowMore } from "./modules/show-more.js";
 
 (() => {
   "use strict";
@@ -68,6 +70,8 @@ import { initAnimations } from "./modules/animations.js";
     initHeader();
     initPhoneMask();
     initDropdowns();
+    initAccordions();
+    initShowMore();
     initCalculator();
     initContactsMap();
     const mobileSliders = initMobileSliders();

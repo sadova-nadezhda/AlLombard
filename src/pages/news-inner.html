@@ -1,0 +1,11 @@
+@@include('head.html', { "title": "Финансовые сервисы объединяют повседневные операции в одном приложении", "description": "Новости компании" })
+@@include('header.html', { "page": "news", "theme": "light" })
+
+<main class="main">
+  @@include('sections/news-detail.html')
+  @@include('sections/estimate.html', { "id": "estimate", "theme": "inline", "title": "Получите онлайн оценку за&nbsp;15&nbsp;минут", "text": "Напишите нам на&nbsp;WhatsApp, отправьте фото имущества и&nbsp;получите ориентировочную сумму" })
+  @@include('sections/news-other.html')
+</main>
+
+@@include('footer.html')
+@@include('scripts.html')

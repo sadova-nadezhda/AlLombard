@@ -1,13 +1,13 @@
-<section class="partners section-pad-bottom section-hidden" aria-labelledby="partners-title">
+<!-- Параметры: class — необязательные доп. классы секции (например, "section-rounded section-pad-top"); start — порог запуска анимации (data-anim-start), например "top bottom", если секция на первом экране -->
+<section class="partners @@if (context.class) {@@class} section-pad-bottom section-hidden" aria-labelledby="partners-title">
   <div class="partners__container container">
-    <div class="partners__head" data-anim-stagger>
+    <div class="partners__head" data-anim-stagger @@if (context.start) {data-anim-start="@@start"}>
       <h2 class="partners__title" id="partners-title">наши партнеры</h2>
       @@include('slider-nav.html', { "class": "partners__nav" })
     </div>
 
-    <!-- Два ряда (Swiper Grid), заполнение по колонкам: карточки идут парами «верх — низ».
-         Стрелки скрываются, если все логотипы помещаются -->
-    <div class="partners__slider swiper" data-slider="partners" data-anim-stagger=".partner-card">
+    <!-- Два ряда (Swiper Grid), заполнение по колонкам: карточки идут парами «верх — низ». -->
+    <div class="partners__slider swiper" data-slider="partners" data-anim-stagger=".partner-card" @@if (context.start) {data-anim-start="@@start"}>
       <ul class="partners__list swiper-wrapper">
         @@include('partner-card.html', { "logo": "img/partner-1.png", "name": "Alisystems" })
         @@include('partner-card.html', { "logo": "img/partner-5.png", "name": "Тау-Кен Алтын" })

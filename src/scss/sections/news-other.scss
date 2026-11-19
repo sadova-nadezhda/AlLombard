@@ -1,0 +1,50 @@
+@use "../functions" as *;
+
+.news-other {
+  &__slider {
+    margin-top: s(40);
+
+    @include tablet {
+      margin-top: s(30);
+    }
+
+    @include mobile {
+      margin-top: s(24);
+      overflow: visible;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: s(20);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      display: flex;
+      gap: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    height: auto;
+
+    &:nth-child(n + 3) {
+      @include tablet {
+        display: none;
+      }
+
+      @include mobile {
+        display: flex;
+      }
+    }
+
+    @include mobile {
+      width: s(316);
+    }
+  }
+}

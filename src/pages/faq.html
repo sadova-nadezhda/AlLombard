@@ -1,0 +1,10 @@
+@@include('head.html', { "title": "FAQ", "description": "Часто задаваемые вопросы" })
+@@include('header.html', { "page": "faq", "theme": "light" })
+
+<main class="main">
+  @@include('sections/faq.html')
+  @@include('sections/estimate.html', { "id": "faq-estimate", "theme": "inline", "title": "Не нашли ответ на&nbsp;свой вопрос?", "text": "Напишите нам на&nbsp;WhatsApp, отправьте фото имущества и&nbsp;получите ориентировочную сумму" })
+</main>
+
+@@include('footer.html')
+@@include('scripts.html')

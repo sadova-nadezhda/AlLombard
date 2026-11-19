@@ -1,0 +1,132 @@
+@use "../functions" as *;
+
+.news-detail {
+  padding-top: s(50);
+
+  @include tablet {
+    padding-top: s(40);
+  }
+
+  @include mobile {
+    padding-top: s(30);
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: s(230) s(900);
+    align-items: start;
+
+    @include tablet {
+      grid-template-columns: 100%;
+      gap: s(24);
+    }
+
+    @include mobile {
+      gap: s(20);
+    }
+  }
+
+  &__back {
+    justify-self: start;
+    font: 400 s(14)/1 var(--font-main);
+    letter-spacing: -0.01em;
+    border-radius: s(4);
+    transition: color 0.3s;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-gold);
+      outline-offset: s(4);
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: s(10);
+  }
+
+  &__title {
+    margin-top: s(40);
+    font-size: s(20);
+    font-weight: 500;
+    line-height: 1.2;
+
+    @include tablet {
+      margin-top: s(30);
+    }
+
+    @include mobile {
+      margin-top: s(24);
+      font-size: s(18);
+    }
+  }
+
+  &__content {
+    margin-top: s(8);
+    color: var(--color-text-lg);
+    line-height: 1.3;
+
+    @include mobile {
+      font-size: s(14);
+    }
+
+    > * + * {
+      margin-top: s(20);
+
+      @include mobile {
+        margin-top: s(16);
+      }
+    }
+
+    > figure,
+    > img {
+      margin-block: s(40);
+
+      @include mobile {
+        margin-block: s(24);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: s(287);
+      object-fit: cover;
+      border-radius: s(16);
+
+      @include tablet {
+        height: s(320);
+      }
+
+      @include mobile {
+        height: s(200);
+      }
+    }
+
+    figcaption {
+      margin-top: s(8);
+      font-size: s(14);
+    }
+
+    h2,
+    h3 {
+      color: var(--color-text);
+      font-size: s(20);
+      line-height: 1.1;
+
+      @include mobile {
+        font-size: s(18);
+      }
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+  }
+}

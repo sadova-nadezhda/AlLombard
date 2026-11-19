@@ -257,7 +257,7 @@
     const burger = header && $(".header__burger", header);
     if (!header || !burger) return;
     const isOpen = () => header.classList.contains("is-open");
-    const setOpen = (open) => {
+    const setOpen2 = (open) => {
       var _a, _b;
       header.classList.toggle("is-open", open);
       burger.setAttribute("aria-expanded", String(open));
@@ -269,9 +269,9 @@
       }
     };
     const close = () => {
-      if (isOpen()) setOpen(false);
+      if (isOpen()) setOpen2(false);
     };
-    burger.addEventListener("click", () => setOpen(!isOpen()));
+    burger.addEventListener("click", () => setOpen2(!isOpen()));
     $$(".header__menu-link", header).forEach((link) => link.addEventListener("click", close));
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && isOpen()) {
@@ -717,7 +717,7 @@
         ease: EASE,
         delay: parseFloat(el.dataset.animDelay) || 0,
         clearProps: "transform",
-        scrollTrigger: { trigger: el, start: START, once: true },
+        scrollTrigger: { trigger: el, start: el.dataset.animStart || START, once: true },
         onStart: () => show([el])
       });
     });
@@ -729,7 +729,7 @@
       if (!items.length) return;
       gsap.set(items, { opacity: 0, y: s(30) });
       ScrollTrigger.batch(items, {
-        start: START,
+        start: parent.dataset.animStart || START,
         once: true,
         onEnter: (batch) => gsap.to(batch, {
           opacity: 1,
@@ -796,6 +796,58 @@
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) root.classList.remove("has-anim");
   };
 
+  // src/js/modules/accordion.js
+  var setOpen = (item, open) => {
+    var _a;
+    item.classList.toggle("is-open", open);
+    (_a = item.querySelector("[data-accordion-toggle]")) == null ? void 0 : _a.setAttribute("aria-expanded", String(open));
+  };
+  var initAccordions = () => {
+    const items = $$("[data-accordion] [data-accordion-item]");
+    if (!items.length) return;
+    items.forEach((item) => {
+      const toggle = item.querySelector("[data-accordion-toggle]");
+      const panel = item.querySelector("[data-accordion-panel]");
+      if (!toggle || !panel) return;
+      const root2 = item.closest("[data-accordion]");
+      const single = root2.dataset.accordion === "single";
+      toggle.addEventListener("click", () => {
+        const open = !item.classList.contains("is-open");
+        if (open && single) {
+          $$("[data-accordion-item].is-open", root2).forEach((other) => setOpen(other, false));
+        }
+        setOpen(item, open);
+      });
+      panel.addEventListener("transitionend", (e) => {
+        if (e.target === panel && e.propertyName === "grid-template-rows") refreshLayout();
+      });
+    });
+  };
+
+  // src/js/modules/show-more.js
+  var initShowMore = () => {
+    $$("[data-show-more]").forEach((list) => {
+      const step = parseInt(list.dataset.showMore, 10) || 6;
+      const items = $$("[data-show-more-item]", list);
+      const btn = list.id ? document.querySelector(`[data-show-more-btn="${list.id}"]`) : null;
+      if (!btn || items.length <= step) return;
+      items.slice(step).forEach((item) => {
+        item.hidden = true;
+      });
+      btn.hidden = false;
+      btn.addEventListener("click", () => {
+        var _a, _b;
+        const next = items.filter((item) => item.hidden).slice(0, step);
+        next.forEach((item) => {
+          item.hidden = false;
+        });
+        (_b = (_a = next[0]) == null ? void 0 : _a.querySelector("a, button")) == null ? void 0 : _b.focus({ preventScroll: true });
+        if (!items.some((item) => item.hidden)) btn.hidden = true;
+        refreshLayout();
+      });
+    });
+  };
+
   // src/js/main.js
   (() => {
     "use strict";
@@ -844,6 +896,8 @@
       initHeader();
       initPhoneMask();
       initDropdowns();
+      initAccordions();
+      initShowMore();
       initCalculator();
       initContactsMap();
       const mobileSliders = initMobileSliders();

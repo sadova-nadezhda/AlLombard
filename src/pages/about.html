@@ -1,14 +1,12 @@
 @@include('head.html', { "title": "О компании", "description": "" })
-@@include('header.html', { "page": "about", "theme": "light" })
+@@include('header.html', { "page": "about", "theme": "accent" })
 
 <main class="main">
-  <section class="about">
-    <div class="about__container container">
-      <h1 class="about__title">О компании</h1>
-    </div>
-  </section>
-
-  @@include('sections/feedback.html', { "title": "Свяжитесь с нами" })
+  @@include('sections/hero.html', { "mod": "about" })
+  @@include('sections/partners.html', { "class": "section-rounded section-pad-top", "start": "top bottom" })
+  @@include('sections/awards.html')
+  @@include('sections/about.html', { "mod": "page" })
+  @@include('sections/estimate.html', { "id": "estimate", "theme": "inline", "title": "Получите онлайн оценку за&nbsp;15&nbsp;минут", "text": "Напишите нам на&nbsp;WhatsApp, отправьте фото имущества и&nbsp;получите ориентировочную сумму" })
 </main>
 
 @@include('footer.html')

@@ -7,6 +7,7 @@ import { s } from "./multiplier.js";
 // data-anim-delay="0.1" — задержка, с
 // data-anim-stagger — дети появляются по очереди; 
 // data-anim-stagger=".card" — элементы по селектору внутри
+// data-anim-start="top bottom" — свой порог запуска (по умолчанию START), например для блоков на первом экране
 // data-counter — число набирается от 0, суффикс («+») сохраняется; 
 // data-counter-delay — задержка, с
 // ======================
@@ -67,7 +68,7 @@ const initReveals = () => {
       ease: EASE,
       delay: parseFloat(el.dataset.animDelay) || 0,
       clearProps: "transform",
-      scrollTrigger: { trigger: el, start: START, once: true },
+      scrollTrigger: { trigger: el, start: el.dataset.animStart || START, once: true },
       onStart: () => show([el]),
     });
   });
@@ -81,7 +82,7 @@ const initStagger = () => {
 
     gsap.set(items, { opacity: 0, y: s(30) });
     ScrollTrigger.batch(items, {
-      start: START,
+      start: parent.dataset.animStart || START,
       once: true,
       onEnter: (batch) => gsap.to(batch, {
         opacity: 1,

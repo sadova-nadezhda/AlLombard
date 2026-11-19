@@ -1,8 +1,10 @@
-<section class="contacts-map section-pad-bottom" id="contacts-map" aria-labelledby="contacts-map-title" data-map-section>
+<!-- Параметры (необязательные): mod — "page" для отдельной страницы (отступ от шапки), tag — "h1" для заголовка страницы (по умолчанию h2) -->
+<section class="contacts-map @@if (context.mod) {contacts-map--@@mod} section-pad-bottom" id="contacts-map" aria-labelledby="contacts-map-title" data-map-section>
   <div class="contacts-map__container container">
     <div class="contacts-map__head" data-anim-stagger>
       <p class="label contacts-map__label">контакты</p>
-      <h2 class="contacts-map__title" id="contacts-map-title">Мы на&nbsp;карте</h2>
+      @@if (context.tag === 'h1') {<h1 class="contacts-map__title" id="contacts-map-title">Мы на&nbsp;карте</h1>}
+      @@if (context.tag !== 'h1') {<h2 class="contacts-map__title" id="contacts-map-title">Мы на&nbsp;карте</h2>}
     </div>
 
     <div class="contacts-map__panel" data-anim="fade-up">

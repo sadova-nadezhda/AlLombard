@@ -13,8 +13,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Анимации: has-anim прячет [data-anim] до старта GSAP (animations.js).
-       Страховка: если скрипты не запустились за 3 с — показываем контент -->
   <script>
     (function () {
       var html = document.documentElement;
@@ -66,13 +64,13 @@
         <nav class="header__nav" aria-label="Основное меню">
           <ul class="header__menu">
             <li class="header__menu-item">
-              <a class="header__menu-link" href="#">Что принимаем</a>
+              <a class="header__menu-link " href="catalog.html">Что принимаем</a>
             </li>
             <li class="header__menu-item">
               <a class="header__menu-link" href="#">Онлайн калькулятор</a>
             </li>
             <li class="header__menu-item">
-              <a class="header__menu-link" href="#">Контакты</a>
+              <a class="header__menu-link " href="contacts.html">Контакты</a>
             </li>
             <li class="header__menu-item">
               <a class="header__menu-link " href="about.html">О компании</a>
@@ -109,7 +107,7 @@
 </header>
 
 <main class="main">
-  <section class="hero section-hidden">
+  <section class="hero  section-hidden">
     <div class="hero__container container">
       <svg class="hero__brand" aria-hidden="true" focusable="false" viewBox="0 0 1335 126" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M500.222 0C514.341 0 526.696 2.63161 537.286 7.89504C547.982 13.1585 556.272 20.5166 562.155 29.9693C568.145 39.422 571.141 50.4321 571.141 63C571.141 75.5679 568.145 86.578 562.155 96.0307C556.272 105.483 547.982 112.842 537.286 118.105C526.696 123.368 514.341 126 500.222 126C486.102 126 473.694 123.368 462.997 118.105C452.408 112.842 444.172 105.483 438.288 96.0307C432.405 86.578 429.464 75.5678 429.464 63C429.464 50.4322 432.405 39.422 438.288 29.9693C444.172 20.5166 452.408 13.1585 462.997 7.89504C473.694 2.6316 486.102 2.47189e-05 500.222 0ZM500.222 27.2304C491.986 27.2304 484.872 28.6799 478.882 31.5801C472.892 34.373 468.239 38.4551 464.923 43.8259C461.607 49.1968 459.949 55.5883 459.949 63C459.949 70.4117 461.607 76.8032 464.923 82.1741C468.239 87.5449 472.892 91.6809 478.882 94.5811C484.872 97.374 491.986 98.7696 500.222 98.7696C508.565 98.7696 515.732 97.374 521.723 94.5811C527.713 91.6809 532.312 87.5449 535.521 82.1741C538.837 76.8032 540.495 70.4118 540.495 63C540.495 55.5882 538.837 49.1968 535.521 43.8259C532.312 38.4551 527.713 34.373 521.723 31.5801C515.732 28.6799 508.565 27.2304 500.222 27.2304Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"/>
@@ -125,12 +123,13 @@
 
 
       <div class="hero__content">
-        <!-- Строки обёрнуты для анимации «выезд из-под маски» (animations.js) -->
         <h1 class="hero__title">
           <span class="hero__title-line"><span class="hero__title-line-inner" data-anim="intro">Деньги под залог</span></span>
           <span class="hero__title-line"><span class="hero__title-line-inner" data-anim="intro">золота, техники</span></span>
           <span class="hero__title-line"><span class="hero__title-line-inner" data-anim="intro">и&nbsp;меховых изделий</span></span>
         </h1>
+        
+        
         <p class="hero__text" data-anim="intro">Узнайте предварительную сумму займа по фото в WhatsApp. Окончательная оценка — после осмотра в&nbsp;отделении.</p>
         <a class="hero__btn button button-white" href="#" target="_blank" rel="noopener" data-anim="intro">Оценить по фото</a>
       </div>
@@ -145,11 +144,13 @@
 
       <div class="hero__visual">
         <img class="hero__img" data-anim="intro" src="img/hero-img.webp" alt="Золотое кольцо со львом в белой руке" width="746" height="497">
+        
+        
       </div>
     </div>
   </section>
 
-  <section class="advantages section-pad section-hidden" aria-labelledby="advantages-title">
+  <section class="advantages section-rounded section-pad section-hidden" aria-labelledby="advantages-title">
     <div class="advantages__container container">
       <svg class="advantages__decor" aria-hidden="true" focusable="false" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle class="circles__ring" style="--i: 0" cx="500" cy="500" r="490" stroke="currentColor" vector-effect="non-scaling-stroke"/>
@@ -170,35 +171,35 @@
       <div class="advantages__slider swiper" data-mobile-slider data-slider-gap="8" data-anim-stagger=".advantage-card">
         <ul class="advantages__list swiper-wrapper">
           <li class="advantages__item swiper-slide">
-            <article class="advantage-card">
+            <div class="advantage-card">
               <span class="advantage-card__num">01</span>
               <h3 class="advantage-card__title">Оценка с&nbsp;учётом рынка</h3>
               <p class="advantage-card__text">Обеспечиваем объективную и&nbsp;справедливую оценку залогового имущества</p>
-            </article>
+            </div>
           </li>
 
           <li class="advantages__item swiper-slide">
-            <article class="advantage-card">
+            <div class="advantage-card">
               <span class="advantage-card__num">02</span>
               <h3 class="advantage-card__title">Предварительная оценка по&nbsp;фото</h3>
               <p class="advantage-card__text">Отправьте фотографии и&nbsp;описание в&nbsp;WhatsApp. Сообщим ориентировочную сумму до&nbsp;посещения отделения</p>
-            </article>
+            </div>
           </li>
 
           <li class="advantages__item swiper-slide">
-            <article class="advantage-card">
+            <div class="advantage-card">
               <span class="advantage-card__num">03</span>
               <h3 class="advantage-card__title">Юридически оформленный договор</h3>
               <p class="advantage-card__text">Честные условия, понятное оформление и&nbsp;полный пакет документов</p>
-            </article>
+            </div>
           </li>
 
           <li class="advantages__item swiper-slide">
-            <article class="advantage-card">
+            <div class="advantage-card">
               <span class="advantage-card__num">04</span>
               <h3 class="advantage-card__title">Безопасное хранение</h3>
               <p class="advantage-card__text">Хранение залога осуществляется в&nbsp;отделениях ломбарда с&nbsp;обеспечением контроля и&nbsp;сохранности</p>
-            </article>
+            </div>
           </li>
 
         </ul>
@@ -206,7 +207,8 @@
     </div>
   </section>
 
-  <section class="pledge section-pad-bottom" id="pledge" aria-labelledby="pledge-title">
+  <!-- Параметры: title — заголовок, tag — h1/h2, mod — "page" для отдельной страницы (отступ от шапки) -->
+  <section class="pledge  section-pad-bottom" id="pledge" aria-labelledby="pledge-title">
     <div class="pledge__container container">
       <p class="label pledge__label" data-anim="fade-up">что принимаем</p>
       <h2 class="pledge__title" id="pledge-title" data-anim="fade-up" data-anim-delay="0.1">Виды залога</h2>
@@ -302,14 +304,14 @@
     </div>
   </section>
 
-  <!-- Параметры: id — префикс id заголовка, theme — "light" для белого варианта -->
+  <!-- Параметры: id — префикс id заголовка, theme — "light" для белого варианта, "inline" — белая карточка без чипов (картинка справа); title, text — необязательная замена текстов по умолчанию -->
   <section class="estimate  section-pad-bottom" aria-labelledby="estimate-title">
     <div class="estimate__container container">
       <div class="estimate__card" data-anim="scale">
         <div class="estimate__content">
           <h2 class="estimate__title" id="estimate-title">Получите предварительную оценку имущества</h2>
           <p class="estimate__text">Напишите нам в&nbsp;WhatsApp, отправьте фото имущества и&nbsp;получите ориентировочную оценку</p>
-          <a class="estimate__btn button  button-white" href="#" target="_blank" rel="noopener">Написать в&nbsp;WhatsApp</a>
+          <a class="estimate__btn button button-white" href="#" target="_blank" rel="noopener">Написать в&nbsp;WhatsApp</a>
           <ul class="estimate__chips" data-anim-stagger>
             <li class="estimate__chip">
               <svg class="estimate__chip-icon" aria-hidden="true" focusable="false" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -332,6 +334,7 @@
 
           </ul>
         </div>
+        
         <img class="estimate__img" data-anim="rise" data-anim-delay="0.2" src="img/estimate-calc.webp" alt="" width="597" height="450" loading="lazy">
       </div>
     </div>
@@ -342,17 +345,19 @@
       <div class="gold-loan__card" data-anim="fade-up">
         <div class="gold-loan__content">
           <h2 class="gold-loan__title" id="gold-loan-title">Займ под залог золота</h2>
-          <p class="gold-loan__text">Узнайте предварительную стоимость залога по&nbsp;фото через WhatsApp, напишите нам или оставьте заявку</p>
-          <dl class="gold-loan__terms">
+          <div class="gold-loan__text">
+            <p>Узнайте предварительную стоимость залога по&nbsp;фото через WhatsApp, напишите нам или оставьте заявку</p>
+          </div>
+          <div class="gold-loan__terms">
             <div class="gold-loan__term">
-              <dt class="gold-loan__term-title">Проба</dt>
-              <dd class="gold-loan__term-value">от&nbsp;375 до&nbsp;999</dd>
+              <div class="gold-loan__term-title">Проба</div>
+              <div class="gold-loan__term-value">от&nbsp;375 до&nbsp;999</div>
             </div>
             <div class="gold-loan__term">
-              <dt class="gold-loan__term-title">Срок займа</dt>
-              <dd class="gold-loan__term-value">от&nbsp;1 до&nbsp;30 дней</dd>
+              <div class="gold-loan__term-title">Срок займа</div>
+              <div class="gold-loan__term-value">от&nbsp;1 до&nbsp;30 дней</div>
             </div>
-          </dl>
+          </div>
           <button class="gold-loan__btn button button-accent modal-btn" type="button" data-type="feedback">Онлайн оценка</button>
         </div>
         <img class="gold-loan__img" data-anim="rise" data-anim-delay="0.2" src="img/gold-hand.webp" alt="Рука с&nbsp;золотыми кольцами" width="264" height="356" loading="lazy">
@@ -454,32 +459,32 @@
         </div>
 
         <div class="calculator__result" aria-live="polite">
-          <p class="calculator__result-title">Сумма займа</p>
-          <p class="calculator__result-sum" data-calculator-out="amount">0&nbsp;₸</p>
-          <dl class="calculator__list">
+          <div class="calculator__result-title">Сумма займа</div>
+          <div class="calculator__result-sum" data-calculator-out="amount">0&nbsp;₸</div>
+          <div class="calculator__list">
             <div class="calculator__row">
-              <dt>Ставка вознаграждения</dt>
-              <dd data-calculator-out="rate">0,28%</dd>
+              <div class="calculator__row-name">Ставка вознаграждения</div>
+              <div class="calculator__row-value" data-calculator-out="rate">0,28%</div>
             </div>
             <div class="calculator__row">
-              <dt>Срок и&nbsp;дата погашения</dt>
-              <dd data-calculator-out="date">—</dd>
+              <div class="calculator__row-name">Срок и&nbsp;дата погашения</div>
+              <div class="calculator__row-value" data-calculator-out="date">—</div>
             </div>
             <div class="calculator__row">
-              <dt>Вознаграждение за&nbsp;весь срок</dt>
-              <dd data-calculator-out="reward">0&nbsp;₸</dd>
+              <div class="calculator__row-name">Вознаграждение за&nbsp;весь срок</div>
+              <div class="calculator__row-value" data-calculator-out="reward">0&nbsp;₸</div>
             </div>
             <div class="calculator__row">
-              <dt>Общая сумма к&nbsp;возврату</dt>
-              <dd data-calculator-out="total">0&nbsp;₸</dd>
+              <div class="calculator__row-name">Общая сумма к&nbsp;возврату</div>
+              <div class="calculator__row-value" data-calculator-out="total">0&nbsp;₸</div>
             </div>
             <div class="calculator__row">
-              <dt>ГЭСВ</dt>
+              <div class="calculator__row-name">ГЭСВ</div>
               <!-- TODO: формулы ГЭСВ пока нет -->
-              <dd data-calculator-out="gesv">—</dd>
+              <div class="calculator__row-value" data-calculator-out="gesv">—</div>
             </div>
-          </dl>
-          <p class="calculator__result-note">Расчёт является предварительным. Точные условия и&nbsp;итоговая сумма определяются при&nbsp;оформлении договора.</p>
+          </div>
+          <div class="calculator__result-note">Расчёт является предварительным. Точные условия и&nbsp;итоговая сумма определяются при&nbsp;оформлении договора.</div>
         </div>
       </div>
     </div>
@@ -496,35 +501,35 @@
       <div class="steps__slider swiper" data-mobile-slider data-slider-gap="8" data-anim-stagger=".step-card">
         <ol class="steps__list swiper-wrapper">
           <li class="steps__item swiper-slide">
-            <article class="step-card">
+            <div class="step-card">
               <h3 class="step-card__title">Онлайн-оценка по&nbsp;фото</h3>
               <p class="step-card__text">Отправьте фото имущества и&nbsp;получите ориентировочную сумму</p>
               <img class="step-card__img" src="img/steps-1.webp" alt="" width="218" height="206" loading="lazy">
-            </article>
+            </div>
           </li>
 
           <li class="steps__item swiper-slide">
-            <article class="step-card">
+            <div class="step-card">
               <h3 class="step-card__title">Профессиональная оценка</h3>
               <p class="step-card__text">Специалист осмотрит вещь и&nbsp;сообщит окончательную сумму займа</p>
               <img class="step-card__img" src="img/steps-2.webp" alt="" width="211" height="188" loading="lazy">
-            </article>
+            </div>
           </li>
 
           <li class="steps__item swiper-slide">
-            <article class="step-card">
+            <div class="step-card">
               <h3 class="step-card__title">Ознакомьтесь<br> с&nbsp;условиями</h3>
               <p class="step-card__text">Узнайте сумму к&nbsp;возврату и&nbsp;дату погашения. Если условия подходят&nbsp;— подпишите договор.</p>
               <img class="step-card__img" src="img/steps-3.webp" alt="" width="162" height="164" loading="lazy">
-            </article>
+            </div>
           </li>
 
           <li class="steps__item swiper-slide">
-            <article class="step-card">
+            <div class="step-card">
               <h3 class="step-card__title">Получите деньги</h3>
               <p class="step-card__text">Получите согласованную сумму способом, доступным в&nbsp;отделении.</p>
               <img class="step-card__img" src="img/steps-4.webp" alt="" width="181" height="205" loading="lazy">
-            </article>
+            </div>
           </li>
 
         </ol>
@@ -532,9 +537,10 @@
     </div>
   </section>
 
-  <section class="partners section-pad-bottom section-hidden" aria-labelledby="partners-title">
+  <!-- Параметры: class — необязательные доп. классы секции (например, "section-rounded section-pad-top"); start — порог запуска анимации (data-anim-start), например "top bottom", если секция на первом экране -->
+  <section class="partners  section-pad-bottom section-hidden" aria-labelledby="partners-title">
     <div class="partners__container container">
-      <div class="partners__head" data-anim-stagger>
+      <div class="partners__head" data-anim-stagger >
         <h2 class="partners__title" id="partners-title">наши партнеры</h2>
         <div class="slider-nav partners__nav">
           <button class="slider-btn slider-btn--prev" type="button" aria-label="Предыдущий слайд">
@@ -553,9 +559,8 @@
 
       </div>
 
-      <!-- Два ряда (Swiper Grid), заполнение по колонкам: карточки идут парами «верх — низ».
-           Стрелки скрываются, если все логотипы помещаются -->
-      <div class="partners__slider swiper" data-slider="partners" data-anim-stagger=".partner-card">
+      <!-- Два ряда (Swiper Grid), заполнение по колонкам: карточки идут парами «верх — низ». -->
+      <div class="partners__slider swiper" data-slider="partners" data-anim-stagger=".partner-card" >
         <ul class="partners__list swiper-wrapper">
           <li class="partners__item swiper-slide">
             <div class="partner-card">
@@ -661,10 +666,12 @@
     </div>
   </section>
 
-  <section class="contacts-map section-pad-bottom" id="contacts-map" aria-labelledby="contacts-map-title" data-map-section>
+  <!-- Параметры (необязательные): mod — "page" для отдельной страницы (отступ от шапки), tag — "h1" для заголовка страницы (по умолчанию h2) -->
+  <section class="contacts-map  section-pad-bottom" id="contacts-map" aria-labelledby="contacts-map-title" data-map-section>
     <div class="contacts-map__container container">
       <div class="contacts-map__head" data-anim-stagger>
         <p class="label contacts-map__label">контакты</p>
+        
         <h2 class="contacts-map__title" id="contacts-map-title">Мы на&nbsp;карте</h2>
       </div>
 
@@ -830,14 +837,14 @@
     </div>
   </section>
 
-  <!-- Параметры: id — префикс id заголовка, theme — "light" для белого варианта -->
+  <!-- Параметры: id — префикс id заголовка, theme — "light" для белого варианта, "inline" — белая карточка без чипов (картинка справа); title, text — необязательная замена текстов по умолчанию -->
   <section class="estimate estimate--light section-pad-bottom" aria-labelledby="estimate-light-title">
     <div class="estimate__container container">
       <div class="estimate__card" data-anim="scale">
         <div class="estimate__content">
           <h2 class="estimate__title" id="estimate-light-title">Получите предварительную оценку имущества</h2>
           <p class="estimate__text">Напишите нам в&nbsp;WhatsApp, отправьте фото имущества и&nbsp;получите ориентировочную оценку</p>
-          <a class="estimate__btn button button-accent " href="#" target="_blank" rel="noopener">Написать в&nbsp;WhatsApp</a>
+          <a class="estimate__btn button button-accent" href="#" target="_blank" rel="noopener">Написать в&nbsp;WhatsApp</a>
           <ul class="estimate__chips" data-anim-stagger>
             <li class="estimate__chip">
               <svg class="estimate__chip-icon" aria-hidden="true" focusable="false" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -860,6 +867,7 @@
 
           </ul>
         </div>
+        
         <img class="estimate__img" data-anim="rise" data-anim-delay="0.2" src="img/estimate-calc.webp" alt="" width="597" height="450" loading="lazy">
       </div>
     </div>
@@ -887,74 +895,73 @@
 
       </div>
 
-      <!-- Стрелки скрываются, если все отзывы помещаются; на мобильном — свайп -->
       <div class="reviews__slider swiper" data-slider="reviews" data-anim-stagger=".review-card">
         <ul class="reviews__list swiper-wrapper">
           <!-- TODO: временные одинаковые отзывы из макета — заменить реальными -->
           <li class="reviews__item swiper-slide">
-            <article class="review-card">
+            <div class="review-card">
               <h3 class="review-card__name">Азат Рахимгалиев</h3>
               <p class="review-card__text">Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!</p>
               <div class="review-card__footer">
                 <time class="review-card__date" datetime="2026-07-29">29 июля 2026</time>
                 <a class="review-card__link" href="#" target="_blank" rel="noopener">Открыть в&nbsp;2gis</a>
               </div>
-            </article>
+            </div>
           </li>
 
           <li class="reviews__item swiper-slide">
-            <article class="review-card">
+            <div class="review-card">
               <h3 class="review-card__name">Азат Рахимгалиев</h3>
               <p class="review-card__text">Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!</p>
               <div class="review-card__footer">
                 <time class="review-card__date" datetime="2026-07-29">29 июля 2026</time>
                 <a class="review-card__link" href="#" target="_blank" rel="noopener">Открыть в&nbsp;2gis</a>
               </div>
-            </article>
+            </div>
           </li>
 
           <li class="reviews__item swiper-slide">
-            <article class="review-card">
+            <div class="review-card">
               <h3 class="review-card__name">Азат Рахимгалиев</h3>
               <p class="review-card__text">Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!</p>
               <div class="review-card__footer">
                 <time class="review-card__date" datetime="2026-07-29">29 июля 2026</time>
                 <a class="review-card__link" href="#" target="_blank" rel="noopener">Открыть в&nbsp;2gis</a>
               </div>
-            </article>
+            </div>
           </li>
 
           <li class="reviews__item swiper-slide">
-            <article class="review-card">
+            <div class="review-card">
               <h3 class="review-card__name">Азат Рахимгалиев</h3>
               <p class="review-card__text">Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!</p>
               <div class="review-card__footer">
                 <time class="review-card__date" datetime="2026-07-29">29 июля 2026</time>
                 <a class="review-card__link" href="#" target="_blank" rel="noopener">Открыть в&nbsp;2gis</a>
               </div>
-            </article>
+            </div>
           </li>
 
           <li class="reviews__item swiper-slide">
-            <article class="review-card">
+            <div class="review-card">
               <h3 class="review-card__name">Азат Рахимгалиев</h3>
               <p class="review-card__text">Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!</p>
               <div class="review-card__footer">
                 <time class="review-card__date" datetime="2026-07-29">29 июля 2026</time>
                 <a class="review-card__link" href="#" target="_blank" rel="noopener">Открыть в&nbsp;2gis</a>
               </div>
-            </article>
+            </div>
           </li>
 
           <li class="reviews__item swiper-slide">
-            <article class="review-card">
+            <div class="review-card">
               <h3 class="review-card__name">Азат Рахимгалиев</h3>
               <p class="review-card__text">Все быстро и&nbsp;грамотно! Сотруднику Диасу Рахмет за&nbsp;помощь все объяснил и&nbsp;подготовил документы оперативно!</p>
               <div class="review-card__footer">
                 <time class="review-card__date" datetime="2026-07-29">29 июля 2026</time>
                 <a class="review-card__link" href="#" target="_blank" rel="noopener">Открыть в&nbsp;2gis</a>
               </div>
-            </article>
+            </div>
           </li>
 
           <!-- /TODO -->
@@ -963,61 +970,65 @@
     </div>
   </section>
 
-  <section class="about section-pad-bottom" aria-labelledby="about-title">
+  <!-- Параметры: mod — "page" для страницы «О компании» -->
+  <section class="about  section-pad-bottom" aria-labelledby="about-title">
     <div class="about__container container">
+      
       <div class="about__content" data-anim-stagger>
         <p class="label about__label">о&nbsp;нас</p>
         <h2 class="about__title" id="about-title">Современный ломбард с&nbsp;прозрачными условиями</h2>
-        <p class="about__text">ALLombard.kz&nbsp;— наш официальный сайт в&nbsp;Республике Казахстан. Мы предоставляем микрокредиты под залог золота, техники, смартфонов, игровых приставок и&nbsp;другого движимого имущества. Предварительная оценка стоимости возможна по&nbsp;фото через WhatsApp.</p>
-        <dl class="about__stats">
+        <div class="about__text">
+          <p>ALLombard.kz&nbsp;— наш официальный сайт в&nbsp;Республике Казахстан. Мы предоставляем микрокредиты под залог золота, техники, смартфонов, игровых приставок и&nbsp;другого движимого имущества. Предварительная оценка стоимости возможна по&nbsp;фото через WhatsApp.</p>
+        </div>
+        <div class="about__stats">
           <div class="about__stat">
-            <dt class="about__stat-value" data-counter data-counter-delay="0.3">100+</dt>
-            <dd class="about__stat-text">филиалов по&nbsp;Казахстану</dd>
+            <div class="about__stat-value" data-counter data-counter-delay="0.3">100+</div>
+            <div class="about__stat-text">филиалов по&nbsp;Казахстану</div>
           </div>
           <div class="about__stat">
-            <dt class="about__stat-value" data-counter data-counter-delay="0.3">400+</dt>
-            <dd class="about__stat-text">сотрудников</dd>
+            <div class="about__stat-value" data-counter data-counter-delay="0.3">400+</div>
+            <div class="about__stat-text">сотрудников</div>
           </div>
           <div class="about__stat">
-            <dt class="about__stat-value" data-counter data-counter-delay="0.3">15+</dt>
-            <dd class="about__stat-text">лет опыта на&nbsp;рынке займов</dd>
+            <div class="about__stat-value" data-counter data-counter-delay="0.3">15+</div>
+            <div class="about__stat-text">лет опыта на&nbsp;рынке займов</div>
           </div>
-        </dl>
+        </div>
         <a class="about__btn button s button-outline-accent" href="#">Подробнее о&nbsp;нас</a>
       </div>
 
-      <article class="about__license" aria-labelledby="about-license-title" data-anim="slide-right" data-anim-delay="0.1">
+      <div class="about__license" data-anim="slide-right" data-anim-delay="0.1">
         <img class="about__license-img" src="img/license.webp" alt="Скан лицензии ТОО «AL LOMBARD KZ»" width="325" height="404" loading="lazy">
         <div class="about__license-body">
           <div class="about__license-head">
-            <h3 class="about__license-title" id="about-license-title">Лицензия</h3>
-            <p class="about__license-number">13.26.0003.L</p>
+            <h3 class="about__license-title">Лицензия</h3>
+            <div class="about__license-number">13.26.0003.L</div>
           </div>
-          <dl class="about__license-list">
+          <div class="about__license-list">
             <div class="about__license-item">
-              <dt class="about__license-name">Наименование организации, осуществляющей микрофинансовую деятельность:</dt>
-              <dd class="about__license-value">ТОО "AL LOMBARD KZ"</dd>
+              <div class="about__license-name">Наименование организации, осуществляющей микрофинансовую деятельность:</div>
+              <div class="about__license-value">ТОО "AL LOMBARD KZ"</div>
             </div>
             <div class="about__license-item">
-              <dt class="about__license-name">БИН</dt>
-              <dd class="about__license-value">080240022292</dd>
+              <div class="about__license-name">БИН</div>
+              <div class="about__license-value">080240022292</div>
             </div>
             <div class="about__license-item">
-              <dt class="about__license-name">Дата выдачи лицензии</dt>
-              <dd class="about__license-value"><time datetime="2026-07-13">2026-07-13</time></dd>
+              <div class="about__license-name">Дата выдачи лицензии</div>
+              <div class="about__license-value">2026-07-13</div>
             </div>
             <div class="about__license-item">
-              <dt class="about__license-name">Дата и&nbsp;номер решения уполномоченного органа о&nbsp;выдаче</dt>
-              <dd class="about__license-value">29.03.2021, №&nbsp;45</dd>
+              <div class="about__license-name">Дата и&nbsp;номер решения уполномоченного органа о&nbsp;выдаче</div>
+              <div class="about__license-value">29.03.2021, №&nbsp;45</div>
             </div>
             <div class="about__license-item">
-              <dt class="about__license-name">Дата и&nbsp;номер решения уполномоченного органа о&nbsp;переоформлении</dt>
-              <dd class="about__license-value">13.07.2026, №38 (ранее ТОО "АЛ ЛОМБАРД", №13.26.0001.L от&nbsp;29.04.2026)</dd>
+              <div class="about__license-name">Дата и&nbsp;номер решения уполномоченного органа о&nbsp;переоформлении</div>
+              <div class="about__license-value">13.07.2026, №38 (ранее ТОО "АЛ ЛОМБАРД", №13.26.0001.L от&nbsp;29.04.2026)</div>
             </div>
-          </dl>
+          </div>
           <a class="about__license-link" href="https://www.gov.kz/org/ardfm/permissions-notifications/section/1/subsection/9/registry/26" target="_blank" rel="noopener noreferrer">Реестр ломбардов МФО РК</a>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 
@@ -1042,7 +1053,7 @@
 
       </div>
 
-      <!-- Высота карточек одна, ширина — по пропорциям грамоты. Стрелки скрываются, если все награды помещаются -->
+      <!-- Высота карточек одна, ширина — по пропорциям грамоты. -->
       <div class="awards__slider swiper" data-slider="awards" data-anim-stagger=".award-card">
         <ul class="awards__list swiper-wrapper">
           <li class="awards__item swiper-slide">
@@ -1077,17 +1088,17 @@
 
       <nav class="footer__nav" aria-label="Меню в подвале">
         <ul class="footer__menu">
-          <li class="footer__menu-item"><a class="footer__link" href="#">Что принимаем</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Услуги</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Каталог</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="catalog.html">Что принимаем</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="services.html">Услуги</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="catalog.html">Каталог</a></li>
           <li class="footer__menu-item"><a class="footer__link" href="about.html">О компании</a></li>
           <li class="footer__menu-item"><a class="footer__link" href="#">Отзывы</a></li>
         </ul>
         <ul class="footer__menu">
-          <li class="footer__menu-item"><a class="footer__link" href="#">Контакты</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Новости</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">Документы</a></li>
-          <li class="footer__menu-item"><a class="footer__link" href="#">FAQ</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="contacts.html">Контакты</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="news.html">Новости</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="docs.html">Документы</a></li>
+          <li class="footer__menu-item"><a class="footer__link" href="faq.html">FAQ</a></li>
         </ul>
       </nav>
 
@@ -1125,7 +1136,7 @@
       <p class="footer__copy">© 2026 AL LOMBARD. Все права защищены.</p>
       <a class="footer__bottom-link" href="#">Политика конфиденциальности</a>
       <a class="footer__bottom-link" href="#">Публичная оферта</a>
-      <a class="footer__bottom-link" href="https://factum.agency/" target="_blank" rel="noopener">Сделано командой <span class="footer__dev">factum.</span></a>
+      <a class="footer__bottom-link footer__bottom-link--dev" href="https://factum.agency/" target="_blank" rel="noopener">Сделано командой <span class="footer__dev">factum.</span></a>
     </div>
 
     <p class="footer__legal">Ломбард осуществляет деятельность на&nbsp;территории Республики Казахстан в&nbsp;соответствии с&nbsp;Законом РК «О&nbsp;микрофинансовой деятельности» и&nbsp;другими нормативными правовыми актами Республики Казахстан. Деятельность ломбарда подлежит государственному регулированию, контролю и&nbsp;надзору со&nbsp;стороны Агентства Республики Казахстан по&nbsp;регулированию и&nbsp;развитию финансового рынка (АРРФР). Компания имеет лицензию на&nbsp;осуществление микрофинансовой деятельности, выданную АРРФР, и&nbsp;включена в&nbsp;соответствующий реестр организаций, осуществляющих микрофинансовую деятельность. Наличие лицензии и&nbsp;включение в&nbsp;реестр подтверждают право компании осуществлять ломбардную деятельность в&nbsp;рамках законодательства Республики Казахстан.</p>

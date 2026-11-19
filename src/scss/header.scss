@@ -244,6 +244,14 @@
     }
   }
 
+  &__lang-toggle,
+  &__lang-link {
+    @include desktop {
+      width: s(44);
+      height: s(44);
+    }
+  }
+
   &__lang-item.is-current {
     @include desktop {
       display: none;
@@ -263,8 +271,8 @@
   }
 
   &__btn {
-    min-height: s(45);
-    padding-inline: s(20);
+    min-height: s(44);
+    padding: s(14) s(19);
 
     @include tablet {
       min-height: s(52);

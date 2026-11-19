@@ -1,0 +1,10 @@
+@@include('head.html', { "title": "Каталог", "description": "Описание каталога" })
+@@include('header.html', { "page": "catalog", "theme": "light" })
+
+<main class="main">
+  @@include('sections/pledge.html', { "title": "Каталог", "tag": "h1", "mod": "page" })
+  @@include('sections/estimate.html', { "id": "estimate", "theme": "inline", "title": "Получите онлайн оценку за&nbsp;15&nbsp;минут", "text": "Напишите нам на&nbsp;WhatsApp, отправьте фото имущества и&nbsp;получите ориентировочную сумму" })
+</main>
+
+@@include('footer.html')
+@@include('scripts.html')
